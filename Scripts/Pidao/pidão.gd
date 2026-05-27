@@ -1,43 +1,85 @@
 extends CharacterBody3D
 
-@onready var nav_agent = $NavigationAgent3D
-@onready var animation_tree = $AnimationTree
-@onready var playback = animation_tree["parameters/playback"]
+@export var speed := 4.0
+@export var gravity := 9.8
 
 var player = null
+var chasing = false
 
-var walk_speed = 3.0
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@onready var agent = $NavigationAgent3D
+
+@onready var detection_area = $DetectionArea
+
+@onready var visual = $"DogModel/Sketchfab_model/root/GLTF_SceneRootNode/rig-root_47/GLTF_created_0/dog_46"
+
+func _ready():
+
+	detection_area.body_entered.connect(_on_body_entered)
+
+	detection_area.body_exited.connect(_on_body_exited)
 
 func _physics_process(delta):
 
+	# GRAVIDADE
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	if player:
+	# PERSEGUIÇÃO
+	if chasing and player != null:
 
-		nav_agent.target_position = player.global_position
+		agent.target_position = player.global_position
 
-		var next_position = nav_agent.get_next_path_position()
+		var next_position = agent.get_next_path_position()
 
-		var direction = (next_position - global_position).normalized()
+		var direction = (
+			next_position - global_position
+		).normalized()
 
-		velocity.x = direction.x * walk_speed
-		velocity.z = direction.z * walk_speed
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 
-		look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z))
+		# ROTAÇÃO
+		if direction.length() > 0:
 
-		playback.travel("walk")
+			var target_rotation = atan2(
+				direction.x,
+				direction.z
+			)
+
+			visual.rotation.y = lerp_angle(
+				visual.rotation.y,
+				target_rotation,
+				10.0 * delta
+			)
 
 	else:
 
-		velocity.x = move_toward(velocity.x, 0, walk_speed)
-		velocity.z = move_toward(velocity.z, 0, walk_speed)
-
-		playback.travel("idle")
+		velocity.x = 0
+		velocity.z = 0
 
 	move_and_slide()
 
+	# GAME OVER
+	if player != null:
 
-func _on_detection_area_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
+		if global_position.distance_to(player.global_position) < 1.5:
+
+			game_over()
+
+func _on_body_entered(body):
+
+	if body.is_in_group("player"):
+
+		player = body
+		chasing = true
+
+func _on_body_exited(body):
+
+	if body == player:
+
+		player = null
+		chasing = false
+
+func game_over():
+
+	print("GAME OVER")
