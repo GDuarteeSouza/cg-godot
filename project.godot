@@ -14,6 +14,10 @@ config/name="CG_GODOT"
 run/main_scene="uid://bpu38et83fq0d"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+GameManager="*uid://c2cjsvt0ftwbi"
+
 [dotnet]
 
 project/assembly_name="CG_GODOT"
