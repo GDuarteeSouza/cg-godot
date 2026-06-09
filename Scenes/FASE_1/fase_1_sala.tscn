@@ -213,7 +213,7 @@ transform = Transform3D(-2.5, 0, -3.774895e-07, 0, 2.5, 0, 3.774895e-07, 0, -2.5
 transform = Transform3D(-2.5, 0, -3.774895e-07, 0, 2.5, 0, 3.774895e-07, 0, -2.5, -30.7394, 2.328906, 2.6272016)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="table23" unique_id=1274561953]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1813107, -0.90178853, 5.0602145)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1813107, -0.98754597, 5.060215)
 mesh = SubResource("PlaneMesh_htkya")
 
 [node name="table24" parent="." unique_id=418600501 instance=ExtResource("3_nxve4")]
@@ -415,7 +415,11 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -7.3436317, 4.989561, -24.278
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.96253, 2.17372, -1.1225433)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1921574217]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0819073, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.59958, 4.2285633, 4.002615)
 
 [node name="professor" parent="." unique_id=874498389 instance=ExtResource("10_gcimx")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -57.018745, 0, -18.574436)
+
+[node name="point_a" type="Marker3D" parent="." unique_id=509108582]
+
+[node name="point_b" type="Marker3D" parent="." unique_id=1726312941]
