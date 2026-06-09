@@ -11,13 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://82rb3mn7hwco" path="res://Scenes/player.scn" id="9_kdcx8"]
 [ext_resource type="PackedScene" uid="uid://cyixsd061j0ue" path="res://Scenes/professor.scn" id="10_gcimx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hm5xe"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_htkya"]
-material = SubResource("StandardMaterial3D_hm5xe")
-size = Vector2(17.5, 12)
-subdivide_depth = 3
-
 [sub_resource type="BoxMesh" id="BoxMesh_ts2t5"]
 size = Vector3(1, 10, 22)
 
@@ -33,10 +26,16 @@ size = Vector3(1, 3, 4.5)
 [sub_resource type="BoxMesh" id="BoxMesh_sv1v8"]
 size = Vector3(1, 11, 3)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0v0o2"]
+albedo_texture = ExtResource("6_ugxhx")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mp6u0"]
+size = Vector3(42, 1, 30)
+
 [node name="FASE_1_SALA" type="Node3D" unique_id=1395165739]
 
 [node name="blackboardbig2" parent="." unique_id=768645760 instance=ExtResource("1_0v0o2")]
-transform = Transform3D(-2.9998376, 0.027306478, 0.015127692, 0.02719687, 2.9997983, -0.021666877, -0.015323874, -0.021528576, -2.9998837, -55.80413, 4.8255777, -22.41147)
+transform = Transform3D(-2.9998376, 0.027306478, 0.015127692, 0.02719687, 2.9997983, -0.021666877, -0.015323874, -0.021528576, -2.9998837, -55.80413, 4.8255777, -23.049786)
 
 [node name="chair2" parent="." unique_id=932742068 instance=ExtResource("2_mp6u0")]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, -62.269295, 0.5421121, -4.3522797)
@@ -144,7 +143,7 @@ transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 1, -55.374382, 8.976429, 0.11633
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 1, -55.89807, 8.939468, -16.052473)
 
 [node name="blackboardbig3" parent="." unique_id=1176081103 instance=ExtResource("1_0v0o2")]
-transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, -37.499863, 4.6758437, -22.870262)
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, -37.499863, 4.6758437, -23.958765)
 
 [node name="chair18" parent="." unique_id=217617674 instance=ExtResource("2_mp6u0")]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, -43.965027, 0.3923781, -4.811073)
@@ -211,10 +210,6 @@ transform = Transform3D(-2.5, 0, -3.774895e-07, 0, 2.5, 0, 3.774895e-07, 0, -2.5
 
 [node name="table23" parent="." unique_id=1020976936 instance=ExtResource("3_nxve4")]
 transform = Transform3D(-2.5, 0, -3.774895e-07, 0, 2.5, 0, 3.774895e-07, 0, -2.5, -30.7394, 2.328906, 2.6272016)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="table23" unique_id=1274561953]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1813107, -0.98754597, 5.060215)
-mesh = SubResource("PlaneMesh_htkya")
 
 [node name="table24" parent="." unique_id=418600501 instance=ExtResource("3_nxve4")]
 transform = Transform3D(-2.5, 0, -3.774895e-07, 0, 2.5, 0, 3.774895e-07, 0, -2.5, -35.282097, 2.027854, 2.6272016)
@@ -367,11 +362,11 @@ transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 1, -16.189142, 8.878902, -0.5792
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 1, -16.712826, 8.841942, -16.748016)
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1197786391]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1994686, 4.7652774, -13.124314)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.170197, 4.7652774, -13.124314)
 mesh = SubResource("BoxMesh_ts2t5")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=613445673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.89869, 9.958561, -10.090945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.45408, 9.958561, -10.090945)
 material_override = SubResource("StandardMaterial3D_wp6gy")
 mesh = SubResource("BoxMesh_dxv3f")
 
@@ -386,11 +381,11 @@ material_override = SubResource("StandardMaterial3D_wp6gy")
 mesh = SubResource("BoxMesh_dxv3f")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1567716859]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1148586, 7.9118576, -0.2306447)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1624627, 8.282328, -0.2306447)
 mesh = SubResource("BoxMesh_8sthb")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1246986496]
-transform = Transform3D(0.99989897, -0.013286821, 0.005041028, 0.013303029, 0.99990636, -0.0031947526, -0.0049980986, 0.003261506, 0.9999822, -5.124605, 4.2008505, 3.4528663)
+transform = Transform3D(0.99989897, -0.013286821, 0.005041028, 0.013303029, 0.99990636, -0.0031947526, -0.0049980986, 0.003261506, 0.9999822, -5.0949078, 4.28546, 3.4528663)
 mesh = SubResource("BoxMesh_sv1v8")
 
 [node name="wallsfloor2" parent="." unique_id=1352748133 instance=ExtResource("7_u5p0b")]
@@ -409,7 +404,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.963797, 4.989561, -24.278
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12.058588, 4.989561, -24.278788)
 
 [node name="wall_008" parent="." unique_id=1004952331 instance=ExtResource("8_c0yqj")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -7.3436317, 4.989561, -24.278788)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -9.854418, 4.989561, -24.278788)
 
 [node name="Player" parent="." unique_id=1450566676 instance=ExtResource("9_kdcx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.96253, 2.17372, -1.1225433)
@@ -417,9 +412,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.96253, 2.17372, -1.122543
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1921574217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.59958, 4.2285633, 4.002615)
 
-[node name="professor" parent="." unique_id=874498389 instance=ExtResource("10_gcimx")]
+[node name="professor" parent="." unique_id=874498389 node_paths=PackedStringArray("point_a", "point_b") instance=ExtResource("10_gcimx")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -57.018745, 0, -18.574436)
+point_a = NodePath("../point_a")
+point_b = NodePath("../point_b")
 
 [node name="point_a" type="Marker3D" parent="." unique_id=509108582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.489494, 1.4566402, -19.602247)
 
 [node name="point_b" type="Marker3D" parent="." unique_id=1726312941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.779688, 0.52330685, -19.89107)
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=549764528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.657484, -0.49235106, -10.024251)
+material_override = SubResource("StandardMaterial3D_0v0o2")
+mesh = SubResource("BoxMesh_mp6u0")
