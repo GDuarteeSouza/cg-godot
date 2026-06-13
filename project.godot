@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 GameManager="*uid://c2cjsvt0ftwbi"
+GameTimer="*uid://djil05pthnk0g"
 
 [dotnet]
 
