@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjudnawb7gfk2"
-path.s3tc="res://.godot/imported/placaUFRRJ_sem_fundo.png-b9b13aaa156da398cc43bc5628823839.s3tc.ctex"
+uid="uid://b6nwft417ca3p"
+path.s3tc="res://.godot/imported/IM.png-9fda526f4d6edeb2fc6a36b7cc941501.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/AssetParallax/placaUFRRJ_sem_fundo.png"
-dest_files=["res://.godot/imported/placaUFRRJ_sem_fundo.png-b9b13aaa156da398cc43bc5628823839.s3tc.ctex"]
+source_file="res://Assets/AssetParallax/IM.png"
+dest_files=["res://.godot/imported/IM.png-9fda526f4d6edeb2fc6a36b7cc941501.s3tc.ctex"]
 
 [params]
 
