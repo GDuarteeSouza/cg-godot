@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bayac7anqknp7"
-path.s3tc="res://.godot/imported/Idle_alpha_1.png-c3331683d0be4263697f9f1573139db0.s3tc.ctex"
+uid="uid://binuybdes1lyi"
+path.s3tc="res://.godot/imported/wallwindow_002_Wall2t_normal.png-44f085527d69014e04687c8bd7be28b2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7dd4b32f57ce38c213b642a708cdfdc7"
+"md5": "ac166f141741bc241e3608f4b62a1722"
 }
 
 [deps]
 
-source_file="res://Assets/Player/texture/Idle_alpha_1.png"
-dest_files=["res://.godot/imported/Idle_alpha_1.png-c3331683d0be4263697f9f1573139db0.s3tc.ctex"]
+source_file="res://AssetSala/Png Sala/walls/GLB/wallwindow_002_Wall2t_normal.png"
+dest_files=["res://.godot/imported/wallwindow_002_Wall2t_normal.png-44f085527d69014e04687c8bd7be28b2.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://AssetSala/Png Sala/walls/GLB/wallwindow_002_Wall2t_normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

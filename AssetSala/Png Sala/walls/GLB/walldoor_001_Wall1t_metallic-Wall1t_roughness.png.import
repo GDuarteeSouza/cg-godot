@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bayac7anqknp7"
-path.s3tc="res://.godot/imported/Idle_alpha_1.png-c3331683d0be4263697f9f1573139db0.s3tc.ctex"
+uid="uid://bnasn6qnen535"
+path.s3tc="res://.godot/imported/walldoor_001_Wall1t_metallic-Wall1t_roughness.png-8a83e0abd93621a5999b3538ecfcc10f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7dd4b32f57ce38c213b642a708cdfdc7"
+"md5": "6dca4c6bbd387429f27b8ebb92d342dd"
 }
 
 [deps]
 
-source_file="res://Assets/Player/texture/Idle_alpha_1.png"
-dest_files=["res://.godot/imported/Idle_alpha_1.png-c3331683d0be4263697f9f1573139db0.s3tc.ctex"]
+source_file="res://AssetSala/Png Sala/walls/GLB/walldoor_001_Wall1t_metallic-Wall1t_roughness.png"
+dest_files=["res://.godot/imported/walldoor_001_Wall1t_metallic-Wall1t_roughness.png-8a83e0abd93621a5999b3538ecfcc10f.s3tc.ctex"]
 
 [params]
 

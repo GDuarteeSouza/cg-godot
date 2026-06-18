@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bayac7anqknp7"
-path.s3tc="res://.godot/imported/Idle_alpha_1.png-c3331683d0be4263697f9f1573139db0.s3tc.ctex"
+uid="uid://c5wixyifnaer2"
+path="res://.godot/imported/door_2.png-bd44d80b072fa96f094b83e542d33be8.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "7dd4b32f57ce38c213b642a708cdfdc7"
+"md5": "0086d7daef4318d6b4318fd11af893da"
 }
 
 [deps]
 
-source_file="res://Assets/Player/texture/Idle_alpha_1.png"
-dest_files=["res://.godot/imported/Idle_alpha_1.png-c3331683d0be4263697f9f1573139db0.s3tc.ctex"]
+source_file="res://AssetSala/Png Sala/walls/Fbx/door_2.png"
+dest_files=["res://.godot/imported/door_2.png-bd44d80b072fa96f094b83e542d33be8.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -41,4 +40,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
