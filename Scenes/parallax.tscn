@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://pvf1xqonngun"]
+
+[ext_resource type="Texture2D" uid="uid://bxemhnoqlt6ii" path="res://Assets/AssetParallax/teste_sem_fundo_v2.png" id="1_m2aa1"]
+[ext_resource type="Texture2D" uid="uid://c4dm4tqcv4clp" path="res://Assets/AssetParallax/nuvem parallax.png" id="2_6tu43"]
+[ext_resource type="Script" uid="uid://do2e675rt24pc" path="res://Scripts/parallax3d/nuvem_2.gd" id="3_47g2l"]
+[ext_resource type="Script" uid="uid://c1ddsiepp124y" path="res://Scripts/parallax3d/nuvem.gd" id="4_461gy"]
+[ext_resource type="Texture2D" uid="uid://bq4ksngnwt554" path="res://Assets/AssetParallax/moon_limpa2.png" id="5_efbbp"]
+[ext_resource type="Script" uid="uid://bwiqj0xyw634w" path="res://Scripts/parallax3d/nuvem_3.gd" id="6_cgjdq"]
+[ext_resource type="Texture2D" uid="uid://c0mxn2mjgu87a" path="res://Assets/AssetParallax/nuvem2_transparente (1).png" id="7_xt1rn"]
+[ext_resource type="Script" uid="uid://u4l561l68cuf" path="res://Scripts/parallax3d/nuvem_4.gd" id="8_0jf2f"]
+[ext_resource type="Script" uid="uid://b8v607cp35ceq" path="res://Scripts/parallax3d/nuvem_5.gd" id="9_pc6ew"]
+[ext_resource type="Script" uid="uid://b8qjb70ndsc5q" path="res://Scripts/parallax3d/nuvem_6.gd" id="10_nvoaq"]
+[ext_resource type="Script" uid="uid://5jddsjtvnyru" path="res://Scripts/parallax3d/nuvem_7.gd" id="11_xkgm6"]
+[ext_resource type="Script" uid="uid://ch02y2fasbq3i" path="res://Scripts/parallax3d/nuvem_8.gd" id="12_sbj37"]
+[ext_resource type="Texture2D" uid="uid://cd3dcby5nv4hg" path="res://Assets/AssetParallax/nuvem4_transparente.png" id="13_0ow2o"]
+[ext_resource type="Script" uid="uid://j6rolkidq3fj" path="res://Scripts/parallax3d/nuvem_9.gd" id="14_d33r5"]
+[ext_resource type="Script" uid="uid://bfgg2yjyswouc" path="res://Scripts/parallax3d/nuvem_10.gd" id="15_dxc0l"]
+[ext_resource type="Script" uid="uid://b26j1yeutrtd3" path="res://Scripts/parallax3d/nuvem_11.gd" id="16_vkyli"]
+[ext_resource type="Texture2D" uid="uid://b6nwft417ca3p" path="res://Assets/AssetParallax/IM.png" id="17_hlo0g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd1ne"]
+transparency = 4
+shading_mode = 0
+albedo_color = Color(0.5918854, 0.5918854, 0.5918854, 1)
+albedo_texture = ExtResource("1_m2aa1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a7ir7"]
+material = SubResource("StandardMaterial3D_nd1ne")
+size = Vector2(670, 248)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7ir7"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("2_6tu43")
+
+[sub_resource type="QuadMesh" id="QuadMesh_yj76c"]
+material = SubResource("StandardMaterial3D_a7ir7")
+size = Vector2(200, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66ggm"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("2_6tu43")
+
+[sub_resource type="QuadMesh" id="QuadMesh_nxfen"]
+lightmap_size_hint = Vector2i(952, 177)
+material = SubResource("StandardMaterial3D_66ggm")
+size = Vector2(190, 35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yj76c"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("5_efbbp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_66ggm"]
+material = SubResource("StandardMaterial3D_yj76c")
+size = Vector2(50, 27)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxfen"]
+transparency = 4
+albedo_texture = ExtResource("2_6tu43")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4yyy3"]
+material = SubResource("StandardMaterial3D_nxfen")
+size = Vector2(300, 70)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yyy3"]
+transparency = 4
+shading_mode = 0
+albedo_color = Color(0.06684141, 0.06684141, 0.06684141, 1)
+albedo_texture = ExtResource("7_xt1rn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_117vg"]
+material = SubResource("StandardMaterial3D_4yyy3")
+size = Vector2(300, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_117vg"]
+transparency = 4
+shading_mode = 0
+albedo_color = Color(0.6342391, 0.6342391, 0.6342391, 1)
+albedo_texture = ExtResource("2_6tu43")
+
+[sub_resource type="QuadMesh" id="QuadMesh_htnv1"]
+material = SubResource("StandardMaterial3D_117vg")
+size = Vector2(200, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htnv1"]
+transparency = 4
+shading_mode = 0
+albedo_color = Color(0.6559155, 0.6559155, 0.85130984, 0.9019608)
+albedo_texture = ExtResource("7_xt1rn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_sj4r4"]
+material = SubResource("StandardMaterial3D_htnv1")
+size = Vector2(250, 23)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sj4r4"]
+transparency = 4
+shading_mode = 0
+albedo_color = Color(0.6220884, 0.629695, 0.8046483, 1)
+albedo_texture = ExtResource("13_0ow2o")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gdmih"]
+material = SubResource("StandardMaterial3D_sj4r4")
+size = Vector2(300, 25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_nd1ne"]
+material = SubResource("StandardMaterial3D_4yyy3")
+size = Vector2(380, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdmih"]
+transparency = 4
+shading_mode = 0
+albedo_color = Color(0.5741211, 0.5741211, 0.5741211, 1)
+albedo_texture = ExtResource("2_6tu43")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jqac4"]
+material = SubResource("StandardMaterial3D_gdmih")
+size = Vector2(300, 35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqac4"]
+transparency = 4
+shading_mode = 0
+albedo_color = Color(0.82398456, 0.82398456, 0.82398456, 1)
+albedo_texture = ExtResource("17_hlo0g")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4tfgc"]
+material = SubResource("StandardMaterial3D_jqac4")
+size = Vector2(390, 110)
+
+[node name="Parallax" type="Node3D" unique_id=1535197340]
+
+[node name="faculdade" type="MeshInstance3D" parent="." unique_id=567679548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.26564, 8.942482, -230.01653)
+mesh = SubResource("QuadMesh_a7ir7")
+
+[node name="nuvem2" type="MeshInstance3D" parent="." unique_id=1813452253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.653214, 127.00641, -326.6099)
+mesh = SubResource("QuadMesh_yj76c")
+script = ExtResource("3_47g2l")
+
+[node name="nuvem" type="MeshInstance3D" parent="." unique_id=1250056851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200.91144, 130.90042, -309.54932)
+mesh = SubResource("QuadMesh_nxfen")
+script = ExtResource("4_461gy")
+
+[node name="lua" type="MeshInstance3D" parent="." unique_id=1693280672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.30788, 226.23528, -524.41187)
+mesh = SubResource("QuadMesh_66ggm")
+
+[node name="nuvem3" type="MeshInstance3D" parent="." unique_id=798027813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.32495, 177.82379, -525.0461)
+mesh = SubResource("QuadMesh_4yyy3")
+script = ExtResource("6_cgjdq")
+
+[node name="nuvem4" type="MeshInstance3D" parent="." unique_id=982490266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.483032, 139.93521, -583.872)
+mesh = SubResource("QuadMesh_117vg")
+script = ExtResource("8_0jf2f")
+
+[node name="nuvem5" type="MeshInstance3D" parent="." unique_id=1042923938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 327.81754, 107.61682, -573.31305)
+mesh = SubResource("QuadMesh_117vg")
+script = ExtResource("9_pc6ew")
+
+[node name="nuvem6" type="MeshInstance3D" parent="." unique_id=454468049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.694016, 216.62204, -403.5334)
+mesh = SubResource("QuadMesh_yj76c")
+script = ExtResource("10_nvoaq")
+
+[node name="nuvem7" type="MeshInstance3D" parent="." unique_id=1399776254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 299.16306, 148.89539, -429.6706)
+mesh = SubResource("QuadMesh_htnv1")
+script = ExtResource("11_xkgm6")
+
+[node name="nuvem8" type="MeshInstance3D" parent="." unique_id=1634681542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 362.0268, 178.48138, -474.00662)
+mesh = SubResource("QuadMesh_sj4r4")
+script = ExtResource("12_sbj37")
+
+[node name="nuvem9" type="MeshInstance3D" parent="." unique_id=1722765079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.26128, 173.72284, -438.4667)
+mesh = SubResource("QuadMesh_gdmih")
+script = ExtResource("14_d33r5")
+
+[node name="nuvem10" type="MeshInstance3D" parent="." unique_id=1719376972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.23972, 221.98889, -638.409)
+mesh = SubResource("QuadMesh_nd1ne")
+script = ExtResource("15_dxc0l")
+
+[node name="nuvem11" type="MeshInstance3D" parent="." unique_id=1232571506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.028915, 244.06107, -511.04947)
+mesh = SubResource("QuadMesh_jqac4")
+script = ExtResource("16_vkyli")
+
+[node name="entrada" type="MeshInstance3D" parent="." unique_id=1914554692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.87543, 13.71619, -374.7539)
+mesh = SubResource("QuadMesh_4tfgc")
