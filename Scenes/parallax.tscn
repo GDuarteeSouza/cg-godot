@@ -26,7 +26,7 @@ albedo_texture = ExtResource("1_m2aa1")
 
 [sub_resource type="QuadMesh" id="QuadMesh_a7ir7"]
 material = SubResource("StandardMaterial3D_nd1ne")
-size = Vector2(670, 248)
+size = Vector2(600, 248)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7ir7"]
 transparency = 4
@@ -126,7 +126,7 @@ albedo_texture = ExtResource("17_hlo0g")
 
 [sub_resource type="QuadMesh" id="QuadMesh_4tfgc"]
 material = SubResource("StandardMaterial3D_jqac4")
-size = Vector2(390, 110)
+size = Vector2(330, 110)
 
 [node name="Parallax" type="Node3D" unique_id=1535197340]
 
