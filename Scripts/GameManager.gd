@@ -1,59 +1,49 @@
 extends Node
 
-@export var max_warnings := 3
-@export var decay_time := 30.0
+@export var starting_time: float = 120.0
 
-var warnings := 0
-
-var decay_timer : Timer
-
+var remaining_time: float
+var timer_running := false
 
 func _ready():
+	reset_timer()
 
-	decay_timer = Timer.new()
-	add_child(decay_timer)
+func _process(delta):
 
-	decay_timer.one_shot = false
-	decay_timer.wait_time = decay_time
+	if not timer_running:
+		return
 
-	decay_timer.timeout.connect(_on_decay_timeout)
+	if remaining_time <= 0:
+		return
 
-	decay_timer.start()
+	remaining_time -= delta
 
-
-func add_warning():
-
-	warnings += 1
-
-	print("Advertências: ", warnings)
-
-	if warnings >= max_warnings:
+	if remaining_time <= 0:
+		remaining_time = 0
 		game_over()
 
+func start_timer():
+	timer_running = true
 
-func _on_decay_timeout():
+func stop_timer():
+	timer_running = false
 
-	if warnings > 0:
+func reset_timer():
+	remaining_time = starting_time
+	timer_running = false
 
-		warnings -= 1
+func remove_time(seconds: float):
+	remaining_time -= seconds
 
-		print("Advertências diminuíram para: ", warnings)
+	if remaining_time < 0:
+		remaining_time = 0
 
+func add_time(seconds: float):
+	remaining_time += seconds
 
 func game_over():
 
-	get_tree().paused = true
+	var main = get_tree().current_scene
 
-	var ui = get_tree().get_first_node_in_group("game_over_ui")
-
-	if ui:
-		ui.show_game_over()
-
-
-func restart_game():
-
-	warnings = 0
-
-	get_tree().paused = false
-
-	get_tree().reload_current_scene()
+	main.get_node("GameWorld").visible = false
+	main.get_node("GameOver").visible = true
