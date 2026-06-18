@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CG_GODOT"
-run/main_scene="uid://bpu38et83fq0d"
+run/main_scene="uid://bhqxaol2nibxy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]

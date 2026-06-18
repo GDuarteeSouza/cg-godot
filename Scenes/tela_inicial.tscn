@@ -5,14 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://iyf2ova82k5o" path="res://Assets/Fonte/FundoInicial.png" id="3_r8dwt"]
 [ext_resource type="Texture2D" uid="uid://u1ff8txtgv4h" path="res://Assets/Fonte/LetraIniJogo.png" id="3_s7e5w"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_atblf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6rs07"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrt2p"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pekxb"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s7e5w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8dwt"]
@@ -27,6 +19,14 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wr1fy"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bwsb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ykfue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qr4gm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2xld"]
+
 [sub_resource type="Theme" id="Theme_0bwsb"]
 Button/colors/font_color = Color(0.01810362, 0.039519947, 0.2442718, 1)
 Button/colors/font_focus_color = Color(1.2491555, 0.8053509, 0, 1)
@@ -36,17 +36,17 @@ Button/colors/font_outline_color = Color(0.9843137, 0.8117647, 0, 1)
 Button/constants/outline_size = 10
 Button/font_sizes/font_size = 50
 Button/fonts/font = ExtResource("1_6rs07")
-Button/styles/disabled = SubResource("StyleBoxEmpty_atblf")
-Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_6rs07")
-Button/styles/focus = SubResource("StyleBoxEmpty_rrt2p")
-Button/styles/hover = SubResource("StyleBoxEmpty_pekxb")
-Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_s7e5w")
-Button/styles/hover_pressed = SubResource("StyleBoxEmpty_r8dwt")
-Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_tvkgi")
-Button/styles/normal = SubResource("StyleBoxEmpty_8mj7w")
-Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_jw1kr")
-Button/styles/pressed = SubResource("StyleBoxEmpty_v06e3")
-Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_wr1fy")
+Button/styles/disabled = SubResource("StyleBoxEmpty_s7e5w")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_r8dwt")
+Button/styles/focus = SubResource("StyleBoxEmpty_tvkgi")
+Button/styles/hover = SubResource("StyleBoxEmpty_8mj7w")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_jw1kr")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_v06e3")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wr1fy")
+Button/styles/normal = SubResource("StyleBoxEmpty_0bwsb")
+Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_ykfue")
+Button/styles/pressed = SubResource("StyleBoxEmpty_qr4gm")
+Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_e2xld")
 
 [sub_resource type="Animation" id="Animation_rrt2p"]
 length = 0.001
