@@ -14,15 +14,39 @@ var collider
 var is_crouching = false
 var is_running = false
 var is_jumping = false
+var is_embarrassed = false
 
 var jump_delay_timer := 0.0
 
+# =========================
+# SISTEMA DE BLOQUEIO
+# =========================
+var controls_locked := false
+var lock_source: String = ""
+
+
 func _ready():
+
+	add_to_group("player")
 
 	anim_tree = $AnimationTree
 	collider = $CollisionShape3D
 
+
 func _physics_process(delta):
+
+	# PLAYER BLOQUEADO
+	if controls_locked:
+
+		velocity.x = 0
+		velocity.z = 0
+
+		if not is_on_floor():
+			velocity.y -= gravity * delta
+
+		move_and_slide()
+
+		return
 
 	var input_dir = Vector2.ZERO
 
@@ -71,26 +95,18 @@ func _physics_process(delta):
 	# LIMITA PROFUNDIDADE
 	global_position.z = clamp(global_position.z, -3.0, 3.0)
 
-	# -------------------------
-	# ROTAÇÃO VISUAL REAL
-	# -------------------------
-
+	# ROTAÇÃO VISUAL
 	if direction.length() > 0:
 
-		# CALCULA ÂNGULO BASEADO NO MOVIMENTO
 		var target_rotation = atan2(direction.x, direction.z)
 
-		# SUAVIZA ROTAÇÃO
 		visual.rotation.y = lerp_angle(
 			visual.rotation.y,
 			target_rotation,
 			10.0 * delta
 		)
 
-	# -------------------------
 	# COLLIDER
-	# -------------------------
-
 	var shape = collider.shape
 
 	if shape is CapsuleShape3D:
@@ -100,10 +116,7 @@ func _physics_process(delta):
 		else:
 			shape.height = 2.0
 
-	# -------------------------
-	# TIMER PULO
-	# -------------------------
-
+	# TIMER DO PULO
 	if jump_delay_timer > 0.0:
 		jump_delay_timer -= delta
 
@@ -112,10 +125,7 @@ func _physics_process(delta):
 	if landed:
 		is_jumping = false
 
-	# -------------------------
 	# ANIMATION TREE
-	# -------------------------
-
 	anim_tree.set("parameters/conditions/is_jumping", is_jumping)
 
 	anim_tree.set("parameters/conditions/is_grounded", landed)
@@ -123,6 +133,10 @@ func _physics_process(delta):
 	anim_tree.set("parameters/conditions/is_crouching", is_crouching)
 
 	anim_tree.set("parameters/conditions/is_standing", not is_crouching)
+
+	anim_tree.set("parameters/conditions/is_embarrassed", is_embarrassed)
+
+	anim_tree.set("parameters/conditions/is_not_embarrassed", not is_embarrassed)
 
 	# BLEND LOCOMOTION
 	var blend_value = 0.0
@@ -139,3 +153,77 @@ func _physics_process(delta):
 
 	# BLEND JUMP
 	anim_tree.set("parameters/Jump/blend_position", blend_value)
+
+
+# ==================================================
+# SISTEMA DE CONTROLE EXTERNO
+# ==================================================
+
+func lock_controls(source: String = ""):
+
+	controls_locked = true
+	lock_source = source
+
+	velocity = Vector3.ZERO
+
+	is_running = false
+	is_crouching = false
+	is_jumping = false
+
+
+func unlock_controls():
+
+	controls_locked = false
+	lock_source = ""
+
+
+func is_controls_locked() -> bool:
+	return controls_locked
+
+
+func lock_controls_for(seconds: float, source: String = ""):
+
+	lock_controls(source)
+
+	await get_tree().create_timer(seconds).timeout
+
+	if lock_source == source:
+		unlock_controls()
+
+
+# ==================================================
+# SISTEMA DE BRONCA
+# ==================================================
+
+func start_embarrassed(guard: Node3D):
+
+	lock_controls("guard")
+
+	is_embarrassed = true
+
+	is_running = false
+	is_crouching = false
+	is_jumping = false
+
+	face_target(guard)
+
+
+func stop_embarrassed():
+
+	is_embarrassed = false
+
+	unlock_controls()
+
+
+func face_target(target: Node3D):
+
+	var direction = target.global_position - global_position
+	direction.y = 0
+
+	if direction.length() == 0:
+		return
+
+	visual.rotation.y = atan2(
+		direction.x,
+		direction.z
+	)
