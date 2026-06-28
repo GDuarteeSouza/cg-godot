@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://4osv8bllve0i"]
+
+[ext_resource type="PackedScene" uid="uid://bi86jjb0ghdql" path="res://Assets/AssetSala/StylooClassroomAssetPack GLTF & FBX/StylooClassroomAssetPack GLTF & FBX/computer/GLTF/COMPUTERusb.glb" id="1_mupqk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xrny5"]
+height = 1.45
+radius = 0.2
+
+[node name="penDrive" type="Area3D" unique_id=211954897]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1735275971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.86699, 17.384956, -3.1852288)
+shape = SubResource("CylinderShape3D_xrny5")
+debug_color = Color(0.8668216, 0.27382237, 0.57897127, 0.41960785)
+
+[node name="COMPUTERusb2" parent="CollisionShape3D" unique_id=1833621598 instance=ExtResource("1_mupqk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.009094238, 0.15516472, 0.01370573)

@@ -1,0 +1,274 @@
+[gd_scene format=3 uid="uid://dchalru73ef0n"]
+
+[ext_resource type="Texture2D" uid="uid://dmdw54kneurs8" path="res://Assets/AssetSala/pngs/baixados (12).jpg" id="1_bor0m"]
+[ext_resource type="Texture2D" uid="uid://b4fuhtt218dmq" path="res://Assets/AssetSala/pngs/bege.jpg" id="2_dsrex"]
+[ext_resource type="PackedScene" uid="uid://4o7yvp7ig6ax" path="res://Scenes/Objetos/armario_3d.scn" id="3_ier17"]
+[ext_resource type="PackedScene" uid="uid://bgcljd6njkiqg" path="res://Scenes/Objetos/armario_1_3d.scn" id="4_ier17"]
+[ext_resource type="PackedScene" uid="uid://cfdm6a4itbdco" path="res://Scenes/Objetos/lampada.scn" id="5_ouml3"]
+[ext_resource type="PackedScene" uid="uid://cy7m4uli4wtwj" path="res://Scenes/area_3d.tscn" id="6_rg5cd"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ouml3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ier17"]
+size = Vector3(140, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lok6v"]
+albedo_texture = ExtResource("1_bor0m")
+
+[sub_resource type="BoxMesh" id="BoxMesh_rg5cd"]
+size = Vector3(140, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbndn"]
+size = Vector3(100, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tq13"]
+albedo_texture = ExtResource("1_bor0m")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pwmm8"]
+size = Vector3(100, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ouml3"]
+size = Vector3(140, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lok6v"]
+size = Vector3(140, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eoqbb"]
+albedo_texture = ExtResource("2_dsrex")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pwmm8"]
+size = Vector2(100, 40)
+
+[sub_resource type="QuadMesh" id="QuadMesh_dsrex"]
+size = Vector2(41, 8)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ier17"]
+size = Vector2(41, 15)
+
+[node name="Corredorfase2" type="Node3D" unique_id=577820740]
+
+[node name="Navigation" type="NavigationRegion3D" parent="." unique_id=1982576992]
+navigation_mesh = SubResource("NavigationMesh_ouml3")
+
+[node name="Corredorzin" type="Node3D" parent="Navigation" unique_id=2094582545]
+
+[node name="Chao3d" type="StaticBody3D" parent="Navigation/Corredorzin" unique_id=179781621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6512747, 0, 0)
+
+[node name="ColisionChao" type="CollisionShape3D" parent="Navigation/Corredorzin/Chao3d" unique_id=65333016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.671265, -0.10104084, 0.50063515)
+shape = SubResource("BoxShape3D_ier17")
+
+[node name="Chao" type="MeshInstance3D" parent="Navigation/Corredorzin/Chao3d" unique_id=508403820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.27235, -0.3965454, 0.14914513)
+material_override = SubResource("StandardMaterial3D_lok6v")
+mesh = SubResource("BoxMesh_rg5cd")
+
+[node name="Teto" type="StaticBody3D" parent="Navigation/Corredorzin" unique_id=1698538687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7999144, 0, 0)
+
+[node name="ColisionTeto" type="CollisionShape3D" parent="Navigation/Corredorzin/Teto" unique_id=1045887703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.573086, 11.191062, 0.50063515)
+shape = SubResource("BoxShape3D_sbndn")
+
+[node name="tetin3d" type="MeshInstance3D" parent="Navigation/Corredorzin/Teto" unique_id=273271909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.69911, 10.895557, 0.14914513)
+material_override = SubResource("StandardMaterial3D_0tq13")
+mesh = SubResource("BoxMesh_pwmm8")
+
+[node name="Teto2" type="StaticBody3D" parent="Navigation/Corredorzin" unique_id=41524569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7999144, 0, 0)
+
+[node name="ColisionTeto" type="CollisionShape3D" parent="Navigation/Corredorzin/Teto2" unique_id=1986423487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.24502, 22.068684, 0.50063515)
+shape = SubResource("BoxShape3D_sbndn")
+
+[node name="tetin3d" type="MeshInstance3D" parent="Navigation/Corredorzin/Teto2" unique_id=854878416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.371044, 21.746826, 0.14914513)
+mesh = SubResource("BoxMesh_pwmm8")
+
+[node name="Teto3" type="StaticBody3D" parent="Navigation/Corredorzin" unique_id=1096956417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7999144, 0, 0)
+
+[node name="ColisionTeto" type="CollisionShape3D" parent="Navigation/Corredorzin/Teto3" unique_id=1792970985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.40759, 29.438496, 0.50063515)
+shape = SubResource("BoxShape3D_ouml3")
+
+[node name="tetin3d" type="MeshInstance3D" parent="Navigation/Corredorzin/Teto3" unique_id=1843697352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.46064, 29.14299, 0.14914513)
+mesh = SubResource("BoxMesh_lok6v")
+
+[node name="Armarios" type="Node3D" parent="Navigation/Corredorzin" unique_id=1601904946]
+
+[node name="A2" parent="Navigation/Corredorzin/Armarios" unique_id=947179703 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 10.511299, 0.93587136, -3.393319)
+
+[node name="A15" parent="Navigation/Corredorzin/Armarios" unique_id=1132757995 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 6.9774094, 0.93587136, -3.393319)
+
+[node name="A16" parent="Navigation/Corredorzin/Armarios" unique_id=1752466466 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 3.3745346, 0.93587136, -3.393319)
+
+[node name="A17" parent="Navigation/Corredorzin/Armarios" unique_id=1459301799 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 38.01676, 0.93587136, -3.393319)
+
+[node name="A18" parent="Navigation/Corredorzin/Armarios" unique_id=431584490 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 34.34675, 0.93587136, -3.393319)
+
+[node name="A19" parent="Navigation/Corredorzin/Armarios" unique_id=587035550 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 30.745186, 0.93587136, -3.393319)
+
+[node name="A20" parent="Navigation/Corredorzin/Armarios" unique_id=1869521134 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 27.142311, 0.93587136, -3.393319)
+
+[node name="A3" parent="Navigation/Corredorzin/Armarios" unique_id=1481744958 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 67.921, 0.93587136, -3.393319)
+
+[node name="A4" parent="Navigation/Corredorzin/Armarios" unique_id=521808987 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 64.25095, 0.93587136, -3.393319)
+
+[node name="A21" parent="Navigation/Corredorzin/Armarios" unique_id=94698538 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 60.64942, 0.93587136, -3.393319)
+
+[node name="A22" parent="Navigation/Corredorzin/Armarios" unique_id=1394722830 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 57.046547, 0.93587136, -3.393319)
+
+[node name="A23" parent="Navigation/Corredorzin/Armarios" unique_id=1911678324 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 91.75645, 0.93587136, -3.393319)
+
+[node name="A24" parent="Navigation/Corredorzin/Armarios" unique_id=2082354585 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 88.0864, 0.93587136, -3.393319)
+
+[node name="A25" parent="Navigation/Corredorzin/Armarios" unique_id=198184333 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 84.48487, 0.93587136, -3.393319)
+
+[node name="A26" parent="Navigation/Corredorzin/Armarios" unique_id=676809677 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 80.881996, 0.93587136, -3.393319)
+
+[node name="A1" parent="Navigation/Corredorzin/Armarios" unique_id=2033205127 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 14.181313, 0.93587136, -3.393319)
+
+[node name="A5" parent="Navigation/Corredorzin/Armarios" unique_id=1278958277 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 10.511299, 12.39263, -3.393319)
+
+[node name="A27" parent="Navigation/Corredorzin/Armarios" unique_id=235818320 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 6.9097366, 12.39263, -3.393319)
+
+[node name="A28" parent="Navigation/Corredorzin/Armarios" unique_id=661918867 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 3.3068619, 12.39263, -3.393319)
+
+[node name="A29" parent="Navigation/Corredorzin/Armarios" unique_id=196038531 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 38.01676, 12.39263, -3.393319)
+
+[node name="A30" parent="Navigation/Corredorzin/Armarios" unique_id=2114049739 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 34.34675, 12.39263, -3.393319)
+
+[node name="A31" parent="Navigation/Corredorzin/Armarios" unique_id=865075048 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 30.745186, 12.39263, -3.393319)
+
+[node name="A32" parent="Navigation/Corredorzin/Armarios" unique_id=1603976851 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 27.142311, 12.39263, -3.393319)
+
+[node name="A6" parent="Navigation/Corredorzin/Armarios" unique_id=2106579030 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 67.921, 12.39263, -3.393319)
+
+[node name="A7" parent="Navigation/Corredorzin/Armarios" unique_id=985347451 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 64.25095, 12.39263, -3.393319)
+
+[node name="A33" parent="Navigation/Corredorzin/Armarios" unique_id=371954639 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 60.64942, 12.39263, -3.393319)
+
+[node name="A34" parent="Navigation/Corredorzin/Armarios" unique_id=1626468479 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 57.046547, 12.39263, -3.393319)
+
+[node name="A35" parent="Navigation/Corredorzin/Armarios" unique_id=1601729021 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 91.75645, 12.39263, -3.393319)
+
+[node name="A36" parent="Navigation/Corredorzin/Armarios" unique_id=1745677914 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 88.0864, 12.39263, -3.393319)
+
+[node name="A37" parent="Navigation/Corredorzin/Armarios" unique_id=230152903 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 84.48487, 12.39263, -3.393319)
+
+[node name="A38" parent="Navigation/Corredorzin/Armarios" unique_id=1271303886 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 80.881996, 12.39263, -3.393319)
+
+[node name="A8" parent="Navigation/Corredorzin/Armarios" unique_id=1323205775 instance=ExtResource("3_ier17")]
+transform = Transform3D(1.192488e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.192488e-10, 14.181313, 12.39263, -3.393319)
+
+[node name="mario_6" parent="Navigation/Corredorzin/Armarios" unique_id=1348971283 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.03429029, 0.08199233, 0.045841467, -0.053099155, 0.057174165, -0.06254277, -0.07748976, -0.0028953364, 0.06314243, 22.266975, 12.261511, -3.5542727)
+
+[node name="mario_7" parent="Navigation/Corredorzin/Armarios" unique_id=503443265 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.04526306, -0.07226944, 0.052233968, 0.044120286, 0.06905617, 0.05731187, -0.077489756, -0.0028953361, 0.06314242, 42.72599, 12.261511, -3.5542727)
+
+[node name="mario_8" parent="Navigation/Corredorzin/Armarios" unique_id=1587284545 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.03429029, 0.08199233, 0.045841467, -0.053099155, 0.057174165, -0.06254277, -0.07748976, -0.0028953364, 0.06314243, 22.266975, 1.0084105, -3.5542727)
+
+[node name="mario_9" parent="Navigation/Corredorzin/Armarios" unique_id=1398582593 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.04526306, -0.07226944, 0.052233968, 0.044120286, 0.06905617, 0.05731187, -0.077489756, -0.0028953361, 0.06314242, 43.09739, 1.0015972, -3.5542727)
+
+[node name="mario_10" parent="Navigation/Corredorzin/Armarios" unique_id=1352520976 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.03429029, 0.08199233, 0.045841467, -0.053099155, 0.057174165, -0.06254277, -0.07748976, -0.0028953364, 0.06314243, 51.57319, 1.0084105, -3.5542727)
+
+[node name="mario_11" parent="Navigation/Corredorzin/Armarios" unique_id=1028741927 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.04526306, -0.07226944, 0.052233968, 0.044120286, 0.06905617, 0.05731187, -0.077489756, -0.0028953361, 0.06314242, 73.02613, 1.0015972, -3.5542727)
+
+[node name="mario_12" parent="Navigation/Corredorzin/Armarios" unique_id=1973470698 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.04526306, -0.07226944, 0.052233968, 0.044120286, 0.06905617, 0.05731187, -0.077489756, -0.0028953361, 0.06314242, 73.02613, 12.497606, -3.5542727)
+
+[node name="mario_13" parent="Navigation/Corredorzin/Armarios" unique_id=749412368 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.03429029, 0.08199233, 0.045841467, -0.053099155, 0.057174165, -0.06254277, -0.07748976, -0.0028953364, 0.06314243, 51.70765, 12.511006, -3.5542727)
+
+[node name="mario_4" parent="Navigation/Corredorzin/Armarios" unique_id=152844982 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.010983867, 0.001813988, 0.099378414, -0.053463086, 0.08439562, 0.0043685613, -0.08379174, -0.053610638, 0.010239746, 18.125984, 0.82377356, 3.929401)
+
+[node name="mario_3" parent="Navigation/Corredorzin/Armarios" unique_id=963122201 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.010983867, 0.001813988, 0.0993784, 0.065336116, 0.07521529, -0.008594274, -0.07490357, 0.065873966, 0.0070763794, 17.939339, 0.82377356, -2.5543947)
+
+[node name="mario_5" parent="Navigation/Corredorzin/Armarios" unique_id=1501946537 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.010983867, 0.001813988, 0.0993784, 0.065336116, 0.07521529, -0.008594274, -0.07490357, 0.065873966, 0.0070763794, 17.871681, 12.625456, -2.5543947)
+
+[node name="mario_14" parent="Navigation/Corredorzin/Armarios" unique_id=836188573 instance=ExtResource("4_ier17")]
+transform = Transform3D(0.010983867, 0.001813988, 0.099378414, -0.053463086, 0.08439562, 0.0043685613, -0.08379174, -0.053610638, 0.010239746, 18.058327, 12.535266, 3.929401)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Navigation/Corredorzin" unique_id=531709841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.73118, 10.16729, -4.6431894)
+material_override = SubResource("StandardMaterial3D_eoqbb")
+mesh = SubResource("QuadMesh_pwmm8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Navigation" unique_id=604488435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.54084, 25.48653, -4.6431894)
+material_override = SubResource("StandardMaterial3D_eoqbb")
+mesh = SubResource("QuadMesh_dsrex")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Navigation" unique_id=857418351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.38282, 3.6556702, -4.6431894)
+material_override = SubResource("StandardMaterial3D_eoqbb")
+mesh = SubResource("QuadMesh_ier17")
+
+[node name="lampada" parent="." unique_id=1797136946 instance=ExtResource("5_ouml3")]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 1, 145.5693, 10.24021, -0.63966656)
+
+[node name="lamapada2" parent="." unique_id=1963913361 instance=ExtResource("5_ouml3")]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 1, 147.36179, 21.488733, -0.63966656)
+
+[node name="NoPenDrive" type="Node3D" parent="." unique_id=1320558977]
+
+[node name="PenDrive" parent="NoPenDrive" unique_id=5989142 instance=ExtResource("6_rg5cd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.219143, 15.971617, 0)
+
+[node name="PenDrive2" parent="NoPenDrive" unique_id=1121529429 instance=ExtResource("6_rg5cd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.265114, 17.896545, -3.5491538)
+
+[node name="PenDrive3" parent="NoPenDrive" unique_id=192538716 instance=ExtResource("6_rg5cd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.493633, 15.19825, 0)
+
+[node name="PenDrive4" parent="NoPenDrive" unique_id=1342502574 instance=ExtResource("6_rg5cd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.165813, 17.435522, -4.0699368)
+
+[node name="PenDrive5" parent="NoPenDrive" unique_id=1340370641 instance=ExtResource("6_rg5cd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.83532, 15.786192, 1.355113)
+
+[node name="PenDrive6" parent="NoPenDrive" unique_id=1581356994 instance=ExtResource("6_rg5cd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.052055, 17.1948, -4.1428223)

@@ -1,0 +1,22 @@
+extends Area3D
+
+const Rotation_speed := 45.0
+
+var start_pos := position.y
+var end_pos := position.y + 0.5
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var penDrive_tween := create_tween().set_loops().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	penDrive_tween.tween_property(self,"position:y",end_pos, 1.0).from(start_pos)
+	penDrive_tween.tween_property(self,"position:y",start_pos, 1.0).from(end_pos)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	rotate_y(deg_to_rad(Rotation_speed *delta))
+
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		queue_free()
