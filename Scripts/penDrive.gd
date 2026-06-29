@@ -2,8 +2,8 @@ extends Area3D
 
 const Rotation_speed := 45.0
 
-var start_pos := position.y
-var end_pos := position.y + 0.5
+@onready var start_pos := position.y
+@onready var end_pos := position.y + 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,4 +19,5 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		GameManager.collect_pendrive()
 		queue_free()

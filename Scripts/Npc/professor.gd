@@ -20,11 +20,14 @@ extends CharacterBody3D
 var player : Node3D
 var going_to_b := true
 
-enum State { WALKING, STARING }
+enum State { WALKING, STARING, FINISHED }
 var current_state : State = State.WALKING
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	
+	if GameManager.has_signal("phase_1_completed"):
+		GameManager.phase_1_completed.connect(_on_phase_1_completed)
 	
 	# Força a lanterna a começar apagada no início do jogo
 	if flashlight:
@@ -96,6 +99,13 @@ func _physics_process(delta: float) -> void:
 				if direction_to_player.length() > 0.2:
 					var target_rot = atan2(direction_to_player.x, direction_to_player.z)
 					visual.rotation.y = lerp_angle(visual.rotation.y, target_rot, 8.0 * delta)
+					
+		State.FINISHED:
+			velocity.x = 0
+			velocity.z = 0
+			move_and_slide()
+			# Ele vai ficar parado olhando para a turma.
+			# Como ele apenas para de andar, ele continua olhando para onde estava.
 
 func define_novo_destino() -> void:
 	if going_to_b:
@@ -134,3 +144,9 @@ func trigger_animation(condition_name: String) -> void:
 		anim_tree.set("parameters/conditions/" + condition_name, true)
 		await get_tree().process_frame
 		anim_tree.set("parameters/conditions/" + condition_name, false)
+
+func _on_phase_1_completed() -> void:
+	current_state = State.FINISHED
+	if flashlight:
+		flashlight.visible = false
+	timer.stop()

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cavbo0rwo2ump"]
+
+[ext_resource type="PackedScene" uid="uid://c753eedb4grya" path="res://Assets/AssetSala/cup.fbx" id="1_p3k24"]
+[ext_resource type="Script" path="res://Scripts/disappear_on_touch.gd" id="2_script"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2vbwh"]
+height = 0.13015175
+radius = 0.060058594
+
+[node name="cup3d" type="Area3D" unique_id=177820794]
+script = ExtResource("2_script")
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1359198143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.061758995, 0)
+shape = SubResource("CylinderShape3D_2vbwh")
+
+[node name="cup" parent="." unique_id=2137123821 instance=ExtResource("1_p3k24")]

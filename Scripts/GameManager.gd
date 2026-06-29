@@ -5,6 +5,19 @@ extends Node
 var remaining_time: float
 var timer_running := false
 
+signal pendrive_collected
+var pendrives_collected: int = 0
+
+signal cup_collected
+signal cake_collected
+var cup_found: bool = false
+var cake_found: bool = false
+
+var checkpoint_1_reached: bool = false
+var checkpoint_2_reached: bool = false
+var checkpoint_3_reached: bool = false
+signal phase_1_completed
+
 func _ready():
 	reset_timer()
 
@@ -47,3 +60,19 @@ func game_over():
 
 	main.get_node("GameWorld").visible = false
 	main.get_node("GameOver").visible = true
+
+func collect_pendrive():
+	pendrives_collected += 1
+	pendrive_collected.emit()
+
+func collect_cup():
+	cup_found = true
+	cup_collected.emit()
+
+func collect_cake():
+	cake_found = true
+	cake_collected.emit()
+
+func complete_phase_1():
+	print("Fase 1 completada com sucesso!")
+	phase_1_completed.emit()

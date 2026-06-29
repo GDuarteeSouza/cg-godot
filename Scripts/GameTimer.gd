@@ -1,11 +1,16 @@
 extends Node
 
-@export var starting_time: float = 120.0
+@export var starting_time: float = 240.0
 
 var remaining_time: float
 var timer_running := false
 
 func _ready():
+	reset_timer()
+	if GameManager.has_signal("phase_1_completed"):
+		GameManager.phase_1_completed.connect(_on_phase_completed)
+
+func _on_phase_completed():
 	reset_timer()
 
 func _process(delta):

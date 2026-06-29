@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://btgmqo16nq8bb"]
+
+[ext_resource type="PackedScene" uid="uid://cmm8gs43wu768" path="res://Assets/AssetSala/StylooClassroomAssetPack GLTF & FBX/StylooClassroomAssetPack GLTF & FBX/catferia/FBX/CAFETERIAcake.fbx" id="1_5wyo6"]
+[ext_resource type="Script" path="res://Scripts/disappear_on_touch.gd" id="2_script"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vje3i"]
+radius = 0.08621337
+
+[node name="cake3d" type="Area3D" unique_id=1306402329]
+script = ExtResource("2_script")
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=157535221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009066105, 0, 0.0017100945)
+shape = SubResource("SphereShape3D_vje3i")
+
+[node name="CAFETERIAcake" parent="." unique_id=540479342 instance=ExtResource("1_5wyo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0089046955, 0, -0.0003684014)
