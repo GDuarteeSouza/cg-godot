@@ -11,6 +11,7 @@ func _ready():
 		GameManager.phase_1_completed.connect(_on_phase_completed)
 
 func _on_phase_completed():
+	starting_time = 180.0 # Passa a ser 3 minutos
 	reset_timer()
 
 func _process(delta):
@@ -47,8 +48,9 @@ func add_time(seconds: float):
 	remaining_time += seconds
 
 func game_over():
-
 	var main = get_tree().current_scene
-
-	main.get_node("GameWorld").visible = false
-	main.get_node("GameOver").visible = true
+	if main.has_method("mostrar_game_over"):
+		main.mostrar_game_over()
+	else:
+		main.get_node("GameWorld").visible = false
+		main.get_node("GameOver").visible = true

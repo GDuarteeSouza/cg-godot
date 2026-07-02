@@ -691,9 +691,6 @@ transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -15.
 [node name="COMPUTERtable35" parent="." unique_id=1131869869 instance=ExtResource("5_adu8i")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.644079, 2.2574291, 12.29458)
 
-[node name="COMPUTERchair35" parent="." unique_id=1257906712 instance=ExtResource("6_ekxpj")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.629553, 1.7107153, 13.677448)
-
 [node name="COMPUTERkeyboard35" parent="." unique_id=963696179 instance=ExtResource("7_3kvgv")]
 transform = Transform3D(-2, -3.019916e-07, 1.3200472e-14, 0, -8.742278e-08, -2, 3.019916e-07, -2, 8.742278e-08, -15.686676, 2.4928064, 12.614548)
 
@@ -706,14 +703,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.008259, 3.028154, 12.2034
 [node name="COMPUTERmouse54" parent="." unique_id=1757918219 instance=ExtResource("8_t00bu")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -16.886927, 2.4740286, 12.645472)
 
-[node name="COMPUTERscreen37" parent="." unique_id=517987629 instance=ExtResource("4_algeq")]
+[node name="Computador-principal" parent="." unique_id=517987629 instance=ExtResource("4_algeq")]
 transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -15.808777, 2.9542193, 12.167973)
 
 [node name="COMPUTERtable36" parent="." unique_id=1966704678 instance=ExtResource("5_adu8i")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.644079, 2.2574291, 12.29458)
-
-[node name="COMPUTERchair36" parent="." unique_id=1253447233 instance=ExtResource("6_ekxpj")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.629553, 1.7107153, 13.677448)
 
 [node name="COMPUTERkeyboard36" parent="." unique_id=1633386105 instance=ExtResource("7_3kvgv")]
 transform = Transform3D(-2, -3.019916e-07, 1.3200472e-14, 0, -8.742278e-08, -2, 3.019916e-07, -2, 8.742278e-08, -15.686676, 2.4928064, 12.614548)
@@ -727,9 +721,6 @@ transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -16.
 [node name="COMPUTERtable37" parent="." unique_id=2111695555 instance=ExtResource("5_adu8i")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.644079, 2.2574291, 12.29458)
 
-[node name="COMPUTERchair37" parent="." unique_id=428668263 instance=ExtResource("6_ekxpj")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.629553, 1.7107153, 13.677448)
-
 [node name="COMPUTERkeyboard37" parent="." unique_id=742392913 instance=ExtResource("7_3kvgv")]
 transform = Transform3D(-2, -3.019916e-07, 1.3200472e-14, 0, -8.742278e-08, -2, 3.019916e-07, -2, 8.742278e-08, -15.686676, 2.4928064, 12.614548)
 
@@ -741,9 +732,6 @@ transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -16.
 
 [node name="COMPUTERtable38" parent="." unique_id=647742153 instance=ExtResource("5_adu8i")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.644079, 2.2574291, 12.29458)
-
-[node name="COMPUTERchair38" parent="." unique_id=1055263071 instance=ExtResource("6_ekxpj")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.629553, 1.7107153, 13.677448)
 
 [node name="COMPUTERkeyboard38" parent="." unique_id=1905525366 instance=ExtResource("7_3kvgv")]
 transform = Transform3D(-2, -3.019916e-07, 1.3200472e-14, 0, -8.742278e-08, -2, 3.019916e-07, -2, 8.742278e-08, -15.686676, 2.4928064, 12.614548)

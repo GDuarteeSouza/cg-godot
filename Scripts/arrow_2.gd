@@ -1,8 +1,8 @@
 extends Node3D
 
 func _process(delta):
-	# Fica visível APENAS DEPOIS do checkpoint 2 e ATÉ completar o checkpoint 3
-	if GameManager.checkpoint_2_reached and not GameManager.checkpoint_3_reached:
+	# Fica visível assim que coletar 6 pendrives e some ao completar o checkpoint-fase-2-1
+	if GameManager.pendrives_collected >= 6 and not GameManager.checkpoint_fase_2_1_reached:
 		visible = true
 	else:
 		visible = false

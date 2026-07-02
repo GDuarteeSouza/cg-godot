@@ -11,9 +11,43 @@
 [ext_resource type="PackedScene" uid="uid://btgmqo16nq8bb" path="res://Scenes/FASE_1/cake_3d.tscn" id="7_p7qdi"]
 [ext_resource type="PackedScene" uid="uid://cagkp3cijmwg" path="res://Scenes/PendriveUI.tscn" id="8_jgqi1"]
 [ext_resource type="PackedScene" path="res://Scenes/FoodUI.tscn" id="8_p7qdi"]
+[ext_resource type="PackedScene" uid="uid://jle4ouhmnvjv" path="res://Assets/arrow.fbx" id="10_nftc5"]
+[ext_resource type="Texture2D" uid="uid://b4fuhtt218dmq" path="res://Assets/AssetSala/pngs/bege.jpg" id="10_xv6wm"]
+[ext_resource type="Script" uid="uid://ddf1pgv746sf5" path="res://Scripts/arrow_3.gd" id="11_xv6wm"]
+[ext_resource type="Script" uid="uid://l753rdootbxv" path="res://Scripts/checkpoint.gd" id="12_opohq"]
+[ext_resource type="PackedScene" uid="uid://d1vk3i0shu2ei" path="res://Assets/fase3/brisbane_city_scania_l94ub_bus_rhd.glb" id="15_2l7kv"]
+[ext_resource type="PackedScene" uid="uid://bl7e4stir8lul" path="res://Assets/fase3/rafael/street_lamp.glb" id="15_opohq"]
+[ext_resource type="Texture2D" uid="uid://b81ao8o23n4yv" path="res://Assets/fase3/rafael/fine_american_road_sjfnbeaa_2k/Fine_American_Road_sjfnbeaa_2K_BaseColor.jpg" id="16_lmghx"]
+[ext_resource type="Texture2D" uid="uid://ctqyvug2sumgn" path="res://Assets/fase3/rafael/uncut_grass_oeeb70_2k/Uncut_Grass_oeeb70_2K_BaseColor.jpg" id="17_kjlcu"]
+[ext_resource type="Texture2D" uid="uid://bokjowhommqj0" path="res://Assets/AssetSala/pngs/Gemini_Generated_Image_sgap3qsgap3qsgap.png" id="17_pk1p8"]
+[ext_resource type="PackedScene" uid="uid://c3t7ap6exfxf8" path="res://Assets/fase3/rafael/cidade/la_night_city.glb" id="18_lmghx"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nd1ne"]
-size = Vector3(20.539162, 3.826477, 16.987091)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4ssw"]
+albedo_texture = ExtResource("10_xv6wm")
+
+[sub_resource type="BoxMesh" id="BoxMesh_a60wh"]
+size = Vector3(10, 0.5, 35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7nena"]
+size = Vector3(5.9864054, 8.822718, 5.2956395)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2l7kv"]
+size = Vector3(8.324463, 7.1417236, 9.713226)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ni63"]
+albedo_texture = ExtResource("16_lmghx")
+
+[sub_resource type="BoxMesh" id="BoxMesh_c7rvh"]
+size = Vector3(150, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjl4j"]
+albedo_texture = ExtResource("17_kjlcu")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hy5fe"]
+lightmap_size_hint = Vector2i(12, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjlcu"]
+albedo_texture = ExtResource("17_pk1p8")
 
 [node name="Main" type="Node3D" unique_id=41322457]
 script = ExtResource("1_lbmb8")
@@ -24,6 +58,12 @@ script = ExtResource("1_lbmb8")
 
 [node name="GameWorld" parent="." unique_id=1993429869 instance=ExtResource("3_ao14q")]
 
+[node name="CollisionShape3D11" parent="GameWorld/NavigationRegion3D/StaticBody3D" parent_id_path=PackedInt32Array(1993429869, 1895207785) index="7" unique_id=56270064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.145132, 10.470306, -0.068626404)
+
+[node name="CollisionShape3D7" parent="GameWorld/NavigationRegion3D/StaticBody3D" parent_id_path=PackedInt32Array(1993429869, 1895207785) index="9" unique_id=1587943788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.386024, 10.458583, -0.068626404)
+
 [node name="Escada_4" parent="GameWorld/NavigationRegion3D/StaticBody3D" parent_id_path=PackedInt32Array(1993429869, 1895207785) index="25" unique_id=1242495032]
 transform = Transform3D(-0.48968863, -0.09200929, -0.041705173, -0.09604946, 0.48801693, 0.051126428, 0.031297445, 0.058083594, -0.4956277, 133.56223, 6.1483517, -1.0962973)
 
@@ -31,183 +71,192 @@ transform = Transform3D(-0.48968863, -0.09200929, -0.041705173, -0.09604946, 0.4
 transform = Transform3D(-0.49869427, 0.021566385, -0.02896369, 0.018013166, 0.49614632, 0.05928185, 0.031297445, 0.058083594, -0.4956277, 122.90864, 3.2578754, -1.9578114)
 
 [node name="Escada_7" parent="GameWorld/NavigationRegion3D/StaticBody3D" parent_id_path=PackedInt32Array(1993429869, 1895207785) index="27" unique_id=2133463963 instance=ExtResource("5_brefj")]
-transform = Transform3D(-0.48817018, -0.0994256, -0.04247842, -0.103490755, 0.48656023, 0.05048581, 0.031297445, 0.058083594, -0.4956277, 138.0325, 7.665793, -1.4591129)
+transform = Transform3D(-0.47764468, -0.14029847, -0.046603736, -0.14448544, 0.47638503, 0.04670466, 0.03129745, 0.058083598, -0.49562776, 138.449, 8.092062, -1.4591129)
 
 [node name="Escada_9" parent="GameWorld/NavigationRegion3D/StaticBody3D" parent_id_path=PackedInt32Array(1993429869, 1895207785) index="28" unique_id=614539560 instance=ExtResource("5_brefj")]
-transform = Transform3D(-0.48817018, -0.0994256, -0.04247842, -0.103490755, 0.48656023, 0.05048581, 0.031297445, 0.058083594, -0.4956277, 142.63033, 9.487561, -1.4764993)
+transform = Transform3D(-0.45534638, -0.1998437, -0.052173886, -0.20103498, 0.4578034, 0.0009855479, 0.04737685, 0.021875098, -0.49726948, 143.04237, 10.351356, -1.3377285)
 
 [node name="Escada_8" parent="GameWorld/NavigationRegion3D/StaticBody3D" parent_id_path=PackedInt32Array(1993429869, 1895207785) index="29" unique_id=402068015 instance=ExtResource("5_brefj")]
 transform = Transform3D(-0.4963086, -0.050511066, -0.033562165, -0.053215593, 0.49544176, 0.041298497, 0.029084126, 0.044565674, -0.49716, 128.27913, 4.5845885, -2.366087)
 
-[node name="Skeleton3D" parent="GameWorld/CharacterBody3D/Idle(2)" parent_id_path=PackedInt32Array(1993429869, 921486424, 1512434231) index="0" unique_id=1716885086]
-bones/0/position = Vector3(0.032094922, 0.9434706, 0.013853618)
-bones/0/rotation = Quaternion(0.005724652, 0.049847417, 0.014312117, 0.998638)
+[node name="Escada_3" parent="GameWorld" index="6" unique_id=626383580]
+transform = Transform3D(0.9642713, 0.26491666, 0, -0.26491666, 0.9642713, 0, 0, 0, 1, 112.68574, 5.722704, -2.8541937)
+
+[node name="armario_5" parent="GameWorld" index="54" unique_id=1729758936]
+transform = Transform3D(0.05562889, -0.08015254, 0.021931788, 0.071484186, 0.059614606, 0.036552902, -0.042372655, -0.004656222, 0.09045927, 89.98523, 11.683732, -3.1581926)
+
+[node name="Skeleton3D" parent="GameWorld/CharacterBody3D/Idle(2)" parent_id_path=PackedInt32Array(1993429869, 921486424, 1512434231) index="0" unique_id=466361843]
+bones/0/position = Vector3(0.014636618, 0.9461908, -0.0013796762)
+bones/0/rotation = Quaternion(0.02224064, -0.0050722556, 0.0035476056, 0.99973357)
 bones/1/position = Vector3(8.4703295e-22, 0.09589874, -0.004037058)
-bones/1/rotation = Quaternion(-0.008346576, -0.021952467, -0.0055279746, 0.99970895)
+bones/1/rotation = Quaternion(-0.012637351, 0.011183364, 0.013131439, 0.9997714)
 bones/2/position = Vector3(-2.5410988e-21, 0.11198097, -9.959013e-11)
-bones/2/rotation = Quaternion(0.027690198, -0.03513287, 0.0044602556, 0.9989891)
+bones/2/rotation = Quaternion(0.013438258, 0.016311163, -0.009060539, 0.9997356)
 bones/3/position = Vector3(0, 0.12797824, 5.812833e-11)
-bones/3/rotation = Quaternion(-0.011601628, -0.035416756, -0.00072556967, 0.99930507)
+bones/3/rotation = Quaternion(-0.025407868, 0.016654775, -0.013444758, 0.999448)
 bones/4/position = Vector3(1.6940659e-21, 0.14397553, 3.1174292e-09)
-bones/4/rotation = Quaternion(-0.02584845, 0.00075234065, -0.015917046, 0.99953884)
+bones/4/rotation = Quaternion(-0.018130194, -0.004879043, -0.022970522, 0.9995598)
 bones/5/position = Vector3(-8.4703295e-22, 0.071815945, 0.022249216)
-bones/5/rotation = Quaternion(0.010276693, 0.008397715, 0.012129794, 0.9998384)
+bones/5/rotation = Quaternion(0.014241606, 0.0010087886, 0.00888129, 0.99985874)
 bones/6/rotation = Quaternion(0, 0, 0, 1)
-bones/7/rotation = Quaternion(-0.6983646, -0.3654208, 0.40344733, -0.46474165)
+bones/7/rotation = Quaternion(-0.6687046, -0.3795882, 0.50671315, -0.38985738)
 bones/8/position = Vector3(5.0052205e-11, 0.12221197, 1.194687e-09)
-bones/8/rotation = Quaternion(0.40035623, 0.014021537, -0.026901053, 0.9158574)
+bones/8/rotation = Quaternion(0.46670273, -0.024382379, -0.2143743, 0.8576933)
 bones/9/position = Vector3(-7.2648565e-10, 0.25786608, 5.312333e-10)
-bones/9/rotation = Quaternion(0.013073748, -0.0030767825, 0.40387166, 0.91471714)
+bones/9/rotation = Quaternion(0.007955453, -0.0032603974, 0.24576528, 0.96929127)
 bones/10/position = Vector3(4.5284454e-10, 0.22541977, 1.140954e-10)
-bones/10/rotation = Quaternion(-0.060336474, 0.18118991, 0.04406232, 0.9806061)
-bones/11/rotation = Quaternion(-0.032085747, 0.35085425, 0.12579305, 0.9273878)
+bones/10/rotation = Quaternion(0.25832424, 0.46282354, -0.07033734, 0.8450536)
+bones/11/rotation = Quaternion(-0.083945304, 0.34232727, 0.089344725, 0.9315486)
 bones/12/position = Vector3(-0.0057967813, 0.031025454, -1.5363755e-10)
-bones/12/rotation = Quaternion(0.09164279, -0.2031149, -0.007119487, 0.974831)
+bones/12/rotation = Quaternion(0.07588431, -0.16999531, -0.013419518, 0.98242724)
 bones/13/position = Vector3(0.0021796469, 0.032090478, -8.968266e-10)
-bones/13/rotation = Quaternion(0.007385224, 0.12429179, 0.12969021, 0.983706)
+bones/13/rotation = Quaternion(0.024677895, 0.13154563, 0.19314529, 0.9719988)
 bones/14/position = Vector3(0.0036171346, 0.026381677, -3.0066083e-10)
 bones/14/rotation = Quaternion(-1.1275703e-16, 3.469447e-18, -4.1633363e-17, 1)
-bones/15/rotation = Quaternion(0.033110175, 0.05858231, 0.031483624, 0.9972365)
+bones/15/rotation = Quaternion(-0.04788292, 0.05410611, 0.036221035, 0.99672854)
 bones/16/position = Vector3(0.00012937798, 0.031765115, 2.0706437e-10)
-bones/16/rotation = Quaternion(0.14552847, -0.00094240694, -0.02521506, 0.9890323)
+bones/16/rotation = Quaternion(0.1538542, -0.0010118013, -0.026103195, 0.98774827)
 bones/17/position = Vector3(-3.817654e-05, 0.029665839, -5.2464055e-10)
-bones/17/rotation = Quaternion(0.03313115, -0.00023083638, -0.00288477, 0.99944687)
+bones/17/rotation = Quaternion(0.041548207, -0.00022582918, -0.0037951795, 0.99912935)
 bones/18/rotation = Quaternion(1.4040418e-17, 1.4094628e-18, -3.469447e-18, 1)
-bones/19/rotation = Quaternion(0.12638871, 0.0015741827, -0.0045026797, 0.99196935)
+bones/19/rotation = Quaternion(0.08521431, 0.0024805055, -0.012158135, 0.99628544)
 bones/20/position = Vector3(8.2336905e-05, 0.031425808, 1.0114576e-10)
-bones/20/rotation = Quaternion(0.23329544, -0.0019207529, -0.033737984, 0.9718186)
+bones/20/rotation = Quaternion(0.2324008, -0.0019118367, -0.03364464, 0.97203624)
 bones/21/position = Vector3(-3.988699e-05, 0.031360738, -1.1843304e-10)
-bones/21/rotation = Quaternion(0.13779898, 0.00028686717, -0.017154165, 0.9903117)
+bones/21/rotation = Quaternion(0.13776302, 0.00028689223, -0.017150335, 0.9903167)
 bones/22/position = Vector3(-4.2449643e-05, 0.027328912, -1.6568125e-10)
 bones/22/rotation = Quaternion(1.66547e-16, -2.6020852e-18, -2.6020852e-18, 1)
-bones/23/rotation = Quaternion(0.2738591, -0.00053044787, -0.016228389, 0.9616327)
+bones/23/rotation = Quaternion(0.24568671, 0.0009947493, -0.020003077, 0.96914244)
 bones/24/position = Vector3(3.4404904e-05, 0.028535308, 8.08662e-11)
-bones/24/rotation = Quaternion(0.14852326, 0.0010275408, -0.020328471, 0.9886995)
+bones/24/rotation = Quaternion(0.14859118, 0.0010280355, -0.02033591, 0.9886891)
 bones/25/position = Vector3(-2.5647465e-05, 0.026301494, 4.5643533e-10)
-bones/25/rotation = Quaternion(0.10894588, 0.0015249796, -0.011532064, 0.99397963)
+bones/25/rotation = Quaternion(0.10901767, 0.0015257188, -0.011539941, 0.99397165)
 bones/26/position = Vector3(-8.757369e-06, 0.023524763, -4.6882676e-10)
 bones/26/rotation = Quaternion(-2.0708261e-17, 8.6736174e-19, 8.6736174e-19, 1)
-bones/27/rotation = Quaternion(0.2517291, 0.0069375015, -0.061216563, 0.9658349)
+bones/27/rotation = Quaternion(0.21299061, 0.0058949837, -0.059799213, 0.97520477)
 bones/28/position = Vector3(2.0624804e-05, 0.025285883, -9.386958e-11)
-bones/28/rotation = Quaternion(0.25086892, -0.0017751604, -0.026645072, 0.96765274)
+bones/28/rotation = Quaternion(0.25503728, -0.0018048144, -0.027101573, 0.96654975)
 bones/29/position = Vector3(-1.4443637e-05, 0.020569153, -9.6980424e-11)
-bones/29/rotation = Quaternion(0.058535226, -9.263048e-05, -0.013706362, 0.9981913)
+bones/29/rotation = Quaternion(0.06283761, -9.500494e-05, -0.014174748, 0.99792314)
 bones/30/position = Vector3(-6.1811206e-06, 0.018596577, 1.7264346e-10)
 bones/30/rotation = Quaternion(1.2683299e-08, 3.469447e-18, 1.7347235e-18, 1)
-bones/31/rotation = Quaternion(0.5976939, -0.37750438, 0.5852482, 0.3971611)
+bones/31/rotation = Quaternion(0.61479783, -0.38092434, 0.5152575, 0.45981517)
 bones/32/position = Vector3(-5.5465514e-11, 0.12221197, 1.1944512e-09)
-bones/32/rotation = Quaternion(0.44996464, -0.082467675, 0.16669434, 0.8734667)
+bones/32/rotation = Quaternion(0.47605422, -0.032965392, -0.0058737877, 0.87877834)
 bones/33/position = Vector3(7.672762e-10, 0.2579296, -1.2280903e-09)
-bones/33/rotation = Quaternion(0.009037025, 0.0033774525, -0.30235267, 0.95314735)
+bones/33/rotation = Quaternion(0.008868952, 0.0033836633, -0.29673776, 0.9549119)
 bones/34/position = Vector3(-2.971874e-10, 0.22543849, -2.383549e-10)
-bones/34/rotation = Quaternion(-0.025213236, -0.34852847, -0.10308219, 0.9312714)
-bones/35/rotation = Quaternion(0.0961389, -0.23816688, -0.08823702, 0.9624179)
+bones/34/rotation = Quaternion(0.042345207, -0.19943835, 0.0077471673, 0.9789644)
+bones/35/rotation = Quaternion(0.0816186, -0.21369424, -0.16505553, 0.95939046)
 bones/36/position = Vector3(0.006494374, 0.033214536, 1.1869397e-09)
-bones/36/rotation = Quaternion(-0.10379374, -0.09588506, -0.09118701, 0.9857575)
+bones/36/rotation = Quaternion(-0.08830883, -0.044633947, -0.042523965, 0.9941836)
 bones/37/position = Vector3(-0.0025312924, 0.030074202, 6.5338446e-10)
-bones/37/rotation = Quaternion(-0.003383994, 0.10255567, -0.15955727, 0.9818414)
+bones/37/rotation = Quaternion(-0.0074863313, 0.095499076, -0.17545696, 0.9798158)
 bones/38/position = Vector3(-0.0039630863, 0.02324825, -9.166268e-11)
 bones/38/rotation = Quaternion(-6.938894e-18, 3.469447e-18, 1.3877788e-17, 1)
-bones/39/rotation = Quaternion(0.011305652, -0.0018251286, -0.07470361, 0.9971401)
-bones/40/rotation = Quaternion(0.2362805, 0.0016087915, 0.03194476, 0.9711583)
+bones/39/rotation = Quaternion(0.11896584, 0.00543555, -0.07291524, 0.9902025)
+bones/40/rotation = Quaternion(0.22836393, 0.0015472367, 0.03116939, 0.9730755)
 bones/41/position = Vector3(2.394652e-05, 0.028612774, 3.852636e-10)
-bones/41/rotation = Quaternion(0.1568662, 0.0020965734, 0.005861804, 0.9876003)
+bones/41/rotation = Quaternion(0.14882156, 0.002023402, 0.005041008, 0.9888492)
 bones/42/position = Vector3(5.1037154e-05, 0.02413243, -4.756937e-10)
 bones/42/rotation = Quaternion(-1.4094628e-17, -3.2526065e-19, -3.469447e-18, 1)
-bones/43/rotation = Quaternion(0.109209724, -0.001544168, -0.01366897, 0.99392354)
+bones/43/rotation = Quaternion(0.2316394, 0.002350174, -0.0129689425, 0.9727125)
 bones/44/position = Vector3(-7.796343e-06, 0.03131988, 4.1494586e-11)
-bones/44/rotation = Quaternion(0.32493463, 0.0026881055, 0.038355004, 0.94495463)
+bones/44/rotation = Quaternion(0.32624462, 0.0027003682, 0.03847806, 0.9444981)
 bones/45/position = Vector3(5.3391495e-06, 0.032147184, 2.068079e-10)
-bones/45/rotation = Quaternion(0.26719218, 0.00025094196, 0.026688341, 0.96327364)
+bones/45/rotation = Quaternion(0.26855588, 0.00025191208, 0.026819529, 0.96289074)
 bones/46/position = Vector3(2.4572066e-06, 0.02609918, 1.4893089e-09)
 bones/46/rotation = Quaternion(1.3857459e-17, -1.7347235e-18, 9.75782e-19, 1)
-bones/47/rotation = Quaternion(0.27715325, -0.0032718347, 0.026500126, 0.96045464)
+bones/47/rotation = Quaternion(0.37080288, 0.0018290492, 0.01751405, 0.92854464)
 bones/48/position = Vector3(-6.557355e-06, 0.028219381, 3.7135006e-10)
-bones/48/rotation = Quaternion(0.20814282, -0.001423757, 0.02432475, 0.9777949)
+bones/48/rotation = Quaternion(0.20746046, -0.0014193523, 0.024255345, 0.9779417)
 bones/49/position = Vector3(1.7203558e-07, 0.02653157, 1.0315504e-09)
-bones/49/rotation = Quaternion(0.17770252, 0.0014327053, 0.0024185427, 0.98408026)
+bones/49/rotation = Quaternion(0.17698763, 0.0014283702, 0.0023430842, 0.98420936)
 bones/50/position = Vector3(6.3853295e-06, 0.023688212, 6.94808e-10)
 bones/50/rotation = Quaternion(1.48558925e-08, 0, -4.3368087e-19, 1)
-bones/51/rotation = Quaternion(0.33035538, -0.008827623, 0.045575507, 0.9427144)
+bones/51/rotation = Quaternion(0.40413317, -0.0016859687, 0.026479756, 0.9143153)
 bones/52/position = Vector3(7.1519967e-06, 0.025626127, 6.5032646e-11)
-bones/52/rotation = Quaternion(0.42206177, 0.0029536276, 0.039481863, 0.9057022)
+bones/52/rotation = Quaternion(0.4113478, 0.0028788126, 0.038429055, 0.9106635)
 bones/53/position = Vector3(-5.1287852e-06, 0.02114199, 2.2393731e-10)
-bones/53/rotation = Quaternion(0.37621304, 0.011718126, 0.019669943, 0.9262503)
+bones/53/rotation = Quaternion(0.3652517, 0.011420313, 0.018502751, 0.93065494)
 bones/54/position = Vector3(-2.022983e-06, 0.018943613, -1.4567014e-10)
 bones/54/rotation = Quaternion(-3.523657e-17, 1.7347235e-18, -1.7347235e-18, 1)
-bones/55/rotation = Quaternion(0.0901048, -0.03898191, 0.99512416, 0.009456795)
-bones/56/rotation = Quaternion(-0.19111189, 0.057913855, -0.012650702, 0.9797766)
-bones/57/rotation = Quaternion(0.57713217, 0.056678392, 0.04749573, 0.8132959)
-bones/58/rotation = Quaternion(0.42878875, -0.027331367, 0.004968784, 0.9029776)
+bones/55/rotation = Quaternion(0.0088524595, 0.29255545, 0.9559962, 0.020105176)
+bones/56/rotation = Quaternion(-0.18054503, -0.0324785, 0.02979898, 0.9825786)
+bones/57/rotation = Quaternion(0.47561592, -0.04866461, 0.04258412, 0.877273)
+bones/58/rotation = Quaternion(0.35908967, -0.01710411, 0.004752192, 0.93313426)
 bones/59/position = Vector3(-1.9097221e-10, 0.049904786, -3.5809182e-11)
 bones/59/rotation = Quaternion(-9.62965e-35, 1.6263033e-18, -6.938894e-18, 1)
-bones/60/rotation = Quaternion(-0.10174853, 0.3107535, 0.9450226, -0.0034324243)
+bones/60/rotation = Quaternion(-0.13116208, -0.054172195, 0.9895383, -0.026000291)
 bones/61/position = Vector3(-1.0395093e-09, 0.44195694, 1.0321598e-09)
-bones/61/rotation = Quaternion(-0.19615094, -0.07481623, -0.024272729, 0.977414)
-bones/62/rotation = Quaternion(0.5741431, 0.13037264, -0.014704561, 0.80817485)
-bones/63/rotation = Quaternion(0.31524292, 0.053581774, -0.012690749, 0.9474122)
+bones/61/rotation = Quaternion(-0.15937604, -0.08475754, -0.01106202, 0.9835106)
+bones/62/rotation = Quaternion(0.6635917, 0.007907847, -0.06848859, 0.7449114)
+bones/63/rotation = Quaternion(0.2987995, 0.051697254, -0.012864969, 0.9528278)
 bones/64/position = Vector3(-1.7998167e-10, 0.050039764, 6.6136584e-12)
 bones/64/rotation = Quaternion(8.6736174e-19, -8.6736174e-19, -2.0816682e-17, 1)
 
-[node name="Skeleton3D" parent="GameWorld/NavigationRegion3D3/FASE_1_SALA/professor/Visual" parent_id_path=PackedInt32Array(1993429869, 336371452, 874498389, 1290469273) index="0" unique_id=1932624321]
-bones/0/position = Vector3(0.047075413, 1.0008526, 0.037319094)
-bones/0/rotation = Quaternion(0.023035893, -0.03616463, -0.012901777, 0.99899703)
-bones/1/rotation = Quaternion(-0.047733847, 0.0032262553, -0.007820636, 0.99882436)
-bones/2/rotation = Quaternion(0.021719964, 0.0056087105, -2.9005081e-05, 0.9997484)
+[node name="SpotLight3D" parent="GameWorld/CharacterBody3D" parent_id_path=PackedInt32Array(1993429869, 921486424) index="2" unique_id=1695037100]
+spot_attenuation = -1.0
+
+[node name="Skeleton3D" parent="GameWorld/NavigationRegion3D3/FASE_1_SALA/professor/Visual" parent_id_path=PackedInt32Array(1993429869, 336371452, 874498389, 1290469273) index="0" unique_id=863412480]
+bones/0/position = Vector3(0.023255758, 0.98756814, 0.020433879)
+bones/0/rotation = Quaternion(0.019511815, -0.047500975, 0.015213143, 0.9985647)
+bones/1/rotation = Quaternion(-0.047080323, 0.005855475, -0.0038072243, 0.99886674)
+bones/2/rotation = Quaternion(0.023213625, 0.012532966, -0.010824222, 0.9995934)
 bones/3/position = Vector3(0, 0.1279102, 2.4310637e-10)
-bones/3/rotation = Quaternion(0.021726927, 0.0055868626, 0.00019786149, 0.9997484)
-bones/4/rotation = Quaternion(-0.0065399418, -0.0053017493, 0.0069138133, 0.99994075)
-bones/5/rotation = Quaternion(-0.03626713, -0.007650011, -0.01765387, 0.99915695)
+bones/3/rotation = Quaternion(0.023213675, 0.012538471, -0.010815684, 0.9995934)
+bones/4/rotation = Quaternion(-0.0011609572, -0.000815648, 0.009475258, 0.9999541)
+bones/5/rotation = Quaternion(-0.037456665, 0.012100565, -0.011360178, 0.9991604)
 bones/6/rotation = Quaternion(0, 0, 0, 1)
-bones/7/rotation = Quaternion(-0.6169827, -0.3512685, 0.6249312, -0.32465956)
+bones/7/rotation = Quaternion(-0.6205332, -0.3412242, 0.63478816, -0.30910933)
 bones/8/position = Vector3(2.830659e-10, 0.14736071, 2.08242e-09)
-bones/8/rotation = Quaternion(0.35663617, -0.11209072, 0.082174346, 0.9238473)
+bones/8/rotation = Quaternion(0.36466, -0.11067123, 0.037674528, 0.9237726)
 bones/9/position = Vector3(-2.7966354e-10, 0.26388922, 4.3649173e-10)
-bones/9/rotation = Quaternion(0.010336267, -0.0024270425, 0.08691854, 0.99615884)
+bones/9/rotation = Quaternion(0.010455781, -0.0024267302, 0.0879253, 0.9960693)
 bones/10/position = Vector3(9.601962e-11, 0.22187269, 4.1899662e-10)
-bones/10/rotation = Quaternion(0.04306788, 0.29255563, -0.010892518, 0.95521605)
-bones/11/rotation = Quaternion(0.12612708, 0.056665525, 0.14962089, 0.9790274)
+bones/10/rotation = Quaternion(0.05261359, 0.30909863, -0.020883601, 0.9493439)
+bones/11/rotation = Quaternion(0.1373576, 0.059832312, 0.1545033, 0.9765663)
 bones/12/position = Vector3(-0.0070174225, 0.035787385, -3.222782e-10)
-bones/12/rotation = Quaternion(-0.0027006126, -0.032178845, -0.13043982, 0.99093026)
+bones/12/rotation = Quaternion(-0.002232195, -0.030749656, -0.12494529, 0.99168456)
 bones/13/position = Vector3(0.00038132461, 0.033518847, 9.146568e-10)
-bones/13/rotation = Quaternion(-0.14187258, -0.004839891, 0.009850931, 0.9898241)
+bones/13/rotation = Quaternion(-0.14137705, -0.0041574426, 0.015535055, 0.98982525)
 bones/14/position = Vector3(0.0066360976, 0.025645718, -6.1515326e-10)
 bones/14/rotation = Quaternion(-6.938894e-18, 6.938894e-18, 1.3877788e-17, 1)
-bones/15/rotation = Quaternion(0.17291962, 0.0039720065, 0.0068299267, 0.9849043)
+bones/15/rotation = Quaternion(0.14043096, 0.0032269405, 0.011050183, 0.99002355)
 bones/16/position = Vector3(0.00020035254, 0.033328544, -1.9112778e-10)
-bones/16/rotation = Quaternion(0.15880993, -0.00014992991, -0.024139088, 0.9870141)
+bones/16/rotation = Quaternion(0.1262407, -9.467581e-05, -0.02008435, 0.9917963)
 bones/17/position = Vector3(-8.227144e-05, 0.030994594, 5.245899e-10)
-bones/17/rotation = Quaternion(0.15881073, 0.00050921534, -0.020715222, 0.98709166)
+bones/17/rotation = Quaternion(0.12624134, 0.00039468624, -0.016646113, 0.9918598)
 bones/18/position = Vector3(-0.00011808336, 0.026962187, 7.601009e-11)
 bones/18/rotation = Quaternion(4.510281e-17, 0, 4.622232e-33, 1)
-bones/19/rotation = Quaternion(0.22153965, 0.005257203, -0.0005780353, 0.97513705)
+bones/19/rotation = Quaternion(0.18935277, 0.0044850665, 0.003646774, 0.9818921)
 bones/20/position = Vector3(0.00013415438, 0.034219634, -3.9255732e-10)
-bones/20/rotation = Quaternion(0.20758034, 4.736684e-05, -0.030223118, 0.977751)
+bones/20/rotation = Quaternion(0.17528906, 3.529084e-05, -0.026201097, 0.98416835)
 bones/21/position = Vector3(-0.0001477245, 0.031783104, 8.007317e-10)
-bones/21/rotation = Quaternion(0.20758146, 0.000530898, -0.023497015, 0.9779354)
+bones/21/rotation = Quaternion(0.17529011, 0.00046428887, -0.019433172, 0.984325)
 bones/22/position = Vector3(1.35696355e-05, 0.028107997, 1.226621e-10)
 bones/22/rotation = Quaternion(1.8067022e-08, 1.0408341e-17, -1.3877788e-17, 1)
-bones/23/rotation = Quaternion(0.27366933, -0.00032786586, -0.012219499, 0.9617462)
+bones/23/rotation = Quaternion(0.24193665, -0.0012417622, -0.0077710436, 0.97026014)
 bones/24/position = Vector3(-4.1404073e-05, 0.028917437, -1.4531687e-10)
-bones/24/rotation = Quaternion(0.25946522, 0.00014689147, -0.03581805, 0.965088)
+bones/24/rotation = Quaternion(0.22763374, 0.00013045734, -0.031310312, 0.97324336)
 bones/25/position = Vector3(9.577469e-06, 0.026551044, 1.8076096e-10)
-bones/25/rotation = Quaternion(0.2594653, -0.00023939315, -0.036199044, 0.96507376)
+bones/25/rotation = Quaternion(0.22763374, -0.00021152844, -0.031694435, 0.9732309)
 bones/26/position = Vector3(3.1826734e-05, 0.02316639, -3.2778735e-10)
 bones/26/rotation = Quaternion(6.7491585e-18, -3.469447e-18, 1.7347235e-18, 1)
-bones/27/rotation = Quaternion(0.3024889, 0.005359416, -0.011570284, 0.95306766)
+bones/27/rotation = Quaternion(0.2710007, 0.0045974073, -0.007295718, 0.96254057)
 bones/28/position = Vector3(0.00012644216, 0.027348444, -4.634182e-11)
-bones/28/rotation = Quaternion(0.28875658, 5.953387e-05, -0.041994896, 0.9564811)
+bones/28/rotation = Quaternion(0.2571328, 4.9109578e-05, -0.037956934, 0.9656305)
 bones/29/position = Vector3(-0.00011839879, 0.022494597, -1.8237056e-10)
-bones/29/rotation = Quaternion(0.2887616, 0.0010271372, -0.03493406, 0.956763)
+bones/29/rotation = Quaternion(0.25713724, 0.00093908305, -0.030834982, 0.96588236)
 bones/30/position = Vector3(-8.042979e-06, 0.017950432, -3.0673775e-10)
 bones/30/rotation = Quaternion(-7.2641546e-18, -3.469447e-18, -2.6020852e-18, 1)
-bones/31/rotation = Quaternion(0.6371584, -0.32281616, 0.63012636, 0.30456495)
+bones/31/rotation = Quaternion(0.63029796, -0.33094898, 0.6311568, 0.30795857)
 bones/32/position = Vector3(-2.2922705e-10, 0.14736071, 2.0890312e-09)
-bones/32/rotation = Quaternion(0.20687348, 0.2849433, -0.25293186, 0.9011305)
+bones/32/rotation = Quaternion(0.25773564, 0.2613919, -0.20176508, 0.9080405)
 bones/33/position = Vector3(3.8287928e-10, 0.26397267, 1.6620261e-10)
-bones/33/rotation = Quaternion(0.023263622, 0.0025439344, -0.20229913, 0.9790441)
+bones/33/rotation = Quaternion(0.036888897, 0.0024592122, -0.3207821, 0.9464312)
 bones/34/position = Vector3(2.1061718e-10, 0.22188774, -1.546201e-10)
-bones/34/rotation = Quaternion(-0.012567372, 0.14442502, -0.17556049, 0.9737361)
+bones/34/rotation = Quaternion(-0.072851464, 0.11806319, -0.17257428, 0.9751779)
 bones/36/position = Vector3(0.0054239524, 0.03333644, -9.399144e-10)
 bones/37/position = Vector3(-0.0007420225, 0.035095558, -1.6417199e-09)
 bones/38/position = Vector3(-0.0046819337, 0.030853424, -1.5339299e-09)
@@ -227,22 +276,22 @@ bones/52/position = Vector3(-0.000109128676, 0.026963307, 2.5052538e-10)
 bones/53/position = Vector3(0.00013179779, 0.021843042, 6.116332e-10)
 bones/54/position = Vector3(-2.2669119e-05, 0.018309679, 2.288163e-10)
 bones/54/rotation = Quaternion(1.4094628e-17, -6.938894e-18, -1.7347235e-18, 1)
-bones/55/rotation = Quaternion(0.07801437, 0.11814175, 0.98987126, -0.01054236)
+bones/55/rotation = Quaternion(0.07482261, 0.18881015, 0.9791518, 0.0037561166)
 bones/56/position = Vector3(-6.464235e-10, 0.42638576, -1.16162344e-10)
-bones/56/rotation = Quaternion(-0.19962426, -0.057883896, 0.015164717, 0.97804385)
+bones/56/rotation = Quaternion(-0.19946694, -0.07295945, 0.016707841, 0.9770418)
 bones/57/position = Vector3(-4.1136777e-10, 0.41747084, -5.640764e-10)
-bones/57/rotation = Quaternion(0.5733809, -0.017825402, 0.05159853, 0.8174683)
+bones/57/rotation = Quaternion(0.5088485, -0.014519215, 0.05216191, 0.85915166)
 bones/58/position = Vector3(-9.083947e-10, 0.1856121, -9.2883e-09)
-bones/58/rotation = Quaternion(0.31345367, -0.041316595, 0.0135838315, 0.948607)
+bones/58/rotation = Quaternion(0.31287238, -0.041255288, 0.013571664, 0.9488018)
 bones/59/position = Vector3(-5.4169502e-11, 0.069745176, 1.7982271e-10)
 bones/59/rotation = Quaternion(-3.469447e-18, -4.3368087e-19, -3.469447e-18, 1)
-bones/60/rotation = Quaternion(-0.029863562, 0.16124085, 0.98646283, 0.000872787)
+bones/60/rotation = Quaternion(-0.096452266, 0.06428557, 0.9928967, 0.02684211)
 bones/61/position = Vector3(4.8869647e-10, 0.42634442, 1.9144969e-10)
-bones/61/rotation = Quaternion(-0.33279032, 0.060780194, -0.060224358, 0.93911105)
+bones/61/rotation = Quaternion(-0.2172707, -0.07807495, -0.017551795, 0.97282565)
 bones/62/position = Vector3(1.9819173e-09, 0.41671726, 5.42306e-10)
-bones/62/rotation = Quaternion(0.52294767, 0.042776562, -0.010004138, 0.85123193)
+bones/62/rotation = Quaternion(0.61163354, 0.035396893, -0.03459863, 0.7895914)
 bones/63/position = Vector3(1.047116e-10, 0.17563167, -5.8131007e-09)
-bones/63/rotation = Quaternion(0.4252147, 0.045290604, -0.014330916, 0.90384513)
+bones/63/rotation = Quaternion(0.36664888, 0.03871481, -0.012963956, 0.92946315)
 bones/64/position = Vector3(1.4847884e-10, 0.06943097, -1.6511803e-10)
 bones/64/rotation = Quaternion(6.938894e-18, 1.3010426e-18, 1.7347235e-17, 1)
 
@@ -252,15 +301,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.586273, 13.257304, -3.006
 [node name="ckeckpoint-fase-1-2" parent="GameWorld" index="68" unique_id=162740464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6984234, 9.930769, 1.3182201)
 
-[node name="Player" parent="GameWorld" index="69" unique_id=1450566676]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.34987, 0.7837014, -1.5883131)
+[node name="CollisionShape3D" parent="GameWorld/ckeckpoint-fase-1-2" index="0" unique_id=146956525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.13755, 2.863349, -0.43619633)
 
-[node name="CheckpointY2" type="Area3D" parent="GameWorld" unique_id=381984610]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.483017, -14.787454, -0.5058031)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/CheckpointY2" unique_id=769341197]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.586273, 13.257304, -3.0068293)
-shape = SubResource("BoxShape3D_nd1ne")
+[node name="Player" parent="GameWorld" index="71" unique_id=1450566676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.94173, 0.69776344, 1.1784053)
 
 [node name="cup3d" parent="GameWorld" unique_id=177820794 instance=ExtResource("6_hmvde")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -53.029408, 12.334055, 0.04763055)
@@ -274,31 +319,352 @@ transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -53.126015, 12.485015, -2.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.38211, 0.068445206, -1.5587916)
 
 [node name="ColisionTeto" parent="GameWorld2/Corredorfase2/Navigation/Corredorzin/Teto" parent_id_path=PackedInt32Array(1099515315, 577820740, 1698538687) index="0" unique_id=1045887703]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.038666, 10.85196, 0.50063515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.00119, 10.875154, 0.50063515)
 
 [node name="PenDrive" parent="GameWorld2/Corredorfase2/NoPenDrive" parent_id_path=PackedInt32Array(1099515315, 577820740, 1320558977) index="0" unique_id=5989142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.928253, 13.601184, 1.1672328)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.682755, 13.489903, -1.2666633)
 
 [node name="PenDrive2" parent="GameWorld2/Corredorfase2/NoPenDrive" parent_id_path=PackedInt32Array(1099515315, 577820740, 1320558977) index="1" unique_id=1121529429]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.23047, 13.521906, 1.7440443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.23047, 17.249498, -3.4415758)
+
+[node name="CollisionShape3D" parent="GameWorld2/Corredorfase2/NoPenDrive/PenDrive2" index="0" unique_id=694175988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06840134, 0)
 
 [node name="PenDrive3" parent="GameWorld2/Corredorfase2/NoPenDrive" parent_id_path=PackedInt32Array(1099515315, 577820740, 1320558977) index="2" unique_id=192538716]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.493637, 13.227894, 1.2543888)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.8965, 16.915155, -3.364675)
+
+[node name="CollisionShape3D" parent="GameWorld2/Corredorfase2/NoPenDrive/PenDrive3" index="0" unique_id=694175988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06864548, 0)
 
 [node name="PenDrive4" parent="GameWorld2/Corredorfase2/NoPenDrive" parent_id_path=PackedInt32Array(1099515315, 577820740, 1320558977) index="3" unique_id=1342502574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.86543, 16.116154, 1.331399)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.00934, 16.116154, -3.5106375)
 
 [node name="PenDrive5" parent="GameWorld2/Corredorfase2/NoPenDrive" parent_id_path=PackedInt32Array(1099515315, 577820740, 1320558977) index="4" unique_id=1340370641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.83533, 14.53104, 1.355113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.83533, 13.912073, 0.3113327)
+
+[node name="CollisionShape3D" parent="GameWorld2/Corredorfase2/NoPenDrive/PenDrive5" index="0" unique_id=694175988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015940666, 0)
 
 [node name="PenDrive6" parent="GameWorld2/Corredorfase2/NoPenDrive" parent_id_path=PackedInt32Array(1099515315, 577820740, 1320558977) index="5" unique_id=1581356994]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.03337, 14.483986, 1.7028179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.70848, 14.094875, 1.0988798)
 
-[node name="GameWorld3" parent="." unique_id=380480754 instance=ExtResource("6_brefj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 318.37222, -0.07600975, -35.515793)
+[node name="chaoparede6" type="MeshInstance3D" parent="GameWorld2/SalaFase2/sala" parent_id_path=PackedInt32Array(1099515315, 455634966, 417573285) index="8" unique_id=763767957]
+transform = Transform3D(-6.467553e-08, -1.5, -3.4924597e-10, 1.5, -6.478223e-08, -7.566996e-10, 7.566996e-10, -4.0745363e-10, 1.5000001, 12.656525, -5.556664, -4.43573)
+material_override = SubResource("StandardMaterial3D_u4ssw")
+mesh = SubResource("BoxMesh_a60wh")
 
-[node name="Fase3_part2" parent="GameWorld3" index="0" unique_id=449404157]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2141113, 9.536743e-07, 0.58499146)
+[node name="arrow3" parent="GameWorld2/SalaFase2/sala" parent_id_path=PackedInt32Array(1099515315, 455634966, 417573285) index="17" unique_id=1018601974 instance=ExtResource("10_nftc5")]
+transform = Transform3D(-0.012869063, -0.24442618, -5.9950027, 5.999155, -0.100481756, -0.008781126, -0.100040406, -5.9941797, 0.24460715, -15.429871, 7.407976, 24.405487)
+script = ExtResource("11_xv6wm")
+
+[node name="checkpoint-fase-2-1" type="Area3D" parent="GameWorld2/SalaFase2/sala" parent_id_path=PackedInt32Array(1099515315, 455634966, 417573285) index="18" unique_id=503050873]
+transform = Transform3D(1, -1.2076953e-09, 0, -1.2050094e-09, 1, 0, 8.731149e-11, 0, 1.0000004, -27.91159, -14.892828, -0.49718094)
+script = ExtResource("12_opohq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld2/SalaFase2/sala/checkpoint-fase-2-1" unique_id=1074548748]
+transform = Transform3D(1, -4.682552e-07, 0, -4.654585e-07, 1, 0, 2.1362212e-08, 2.339948e-08, 1.0000005, 12.554733, 19.178751, 16.938648)
+shape = SubResource("BoxShape3D_7nena")
+
+[node name="GameWorld3" type="Node3D" parent="." unique_id=357301731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 305.10898, -2.0203857, -25.126953)
+
+[node name="GameWorld3" parent="GameWorld3" unique_id=380480754 instance=ExtResource("6_brefj")]
+transform = Transform3D(-0.9997832, 0, -0.020820217, 0, 1, 0, 0.020820217, 0, -0.9997832, 1222.379, 0, 13.432953)
+
+[node name="Fase3" parent="GameWorld3/GameWorld3" index="0" unique_id=1393945811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.008423, 0, -3.939064)
+
+[node name="checkpoint-fase-3-1" type="Area3D" parent="GameWorld3/GameWorld3/Fase3" index="0" unique_id=2008945129]
+transform = Transform3D(1, -1.2076952e-09, 0, -1.2050094e-09, 1, 0, 0, 0, 1.0000004, 150.20886, 3.3962193, -4.2914104)
+script = ExtResource("12_opohq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld3/GameWorld3/Fase3/checkpoint-fase-3-1" unique_id=823927095]
+transform = Transform3D(1, -5.3451167e-17, 0, -1.07336015e-17, 1, 0, 0, 4.89192e-16, 1, -34.37683, 4.7088842, -11.103537)
+shape = SubResource("BoxShape3D_2l7kv")
+
+[node name="CollisionShape3D" parent="GameWorld3/GameWorld3/Fase3/chao" parent_id_path=PackedInt32Array(380480754, 1139563127) index="0" unique_id=2115325560]
+transform = Transform3D(4.0000005, 0, 0, 0, 4, 0, 0, 0, 4.0000005, 33.47882, -1.2472878, 7.390976e-06)
+
+[node name="chao-jogavel2" parent="GameWorld3/GameWorld3/Fase3/chao" parent_id_path=PackedInt32Array(380480754, 1139563127) index="2" unique_id=1838180105]
+transform = Transform3D(1.8372816, 0, 0, 0, 1, 0, 1.1641532e-08, 0, 2.9419582, -383.3277, 0, 0.5885463)
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted" parent_id_path=PackedInt32Array(380480754, 215433919) index="1" unique_id=113266957]
+transform = Transform3D(0.97567075, -0.042221803, -0.21513684, 0.21447027, -0.019783111, 0.97653013, -0.045486946, -0.9989124, -0.010246479, 2.272726, 6.185005, -0.103759766)
+light_energy = 16.0
+light_indirect_energy = 1.099
+spot_range = 18.217072
+spot_angle = 20.474234
+
+[node name="FAB converted23" parent="GameWorld3/GameWorld3/Fase3/postes" parent_id_path=PackedInt32Array(380480754, 1462970087) index="1" unique_id=215433919 instance=ExtResource("15_opohq")]
+transform = Transform3D(-0.9997994, 0, 0.020035032, 0, 1, 0, -0.020035032, 0, -0.9997994, 598.9725, 11.2917185, 0.22390747)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted23" unique_id=593642083]
+transform = Transform3D(0.97567075, -0.042221803, -0.21513684, 0.21447027, -0.019783111, 0.97653013, -0.045486946, -0.9989124, -0.010246479, 2.272726, 6.185005, -0.103759766)
+light_color = Color(1, 1, 0.45882353, 1)
+light_energy = 16.0
+light_indirect_energy = 1.099
+spot_range = 26.276974
+spot_angle = 35.10309
+
+[node name="FAB converted24" parent="GameWorld3/GameWorld3/Fase3/postes" parent_id_path=PackedInt32Array(380480754, 1462970087) index="2" unique_id=1242047877 instance=ExtResource("15_opohq")]
+transform = Transform3D(0.9993329, 0, -0.036521707, 0, 1, 0, 0.036521707, 0, 0.9993329, 602.0751, 11.2917185, -0.50819445)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted24" unique_id=1114515223]
+transform = Transform3D(0.97567075, -0.042221803, -0.21513684, 0.21447027, -0.019783111, 0.97653013, -0.045486946, -0.9989124, -0.010246479, 2.272726, 6.185005, -0.103759766)
+light_color = Color(1, 1, 0.45882353, 1)
+light_energy = 16.0
+light_indirect_energy = 1.099
+spot_range = 26.276974
+spot_angle = 35.10309
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted2" parent_id_path=PackedInt32Array(380480754, 974538167) index="1" unique_id=1615549711]
+transform = Transform3D(0.9505512, -0.040328752, -0.30793902, 0.30738038, -0.019544376, 0.9513861, -0.044386677, -0.99899536, -0.006181659, 2.272728, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 18.200584
+spot_angle = 17.009811
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted3" parent_id_path=PackedInt32Array(380480754, 1172463945) index="1" unique_id=1645482622]
+transform = Transform3D(0.9569888, -0.04075311, -0.2872483, 0.2866656, -0.01961407, 0.95782995, -0.04466866, -0.99897677, -0.007087929, 2.2727242, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 20.059101
+spot_angle = 19.471249
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted4" parent_id_path=PackedInt32Array(380480754, 1193615701) index="1" unique_id=914614183]
+transform = Transform3D(0.9172531, -0.038497727, -0.39644, 0.39598486, -0.019132946, 0.91805774, -0.042928193, -0.99907553, -0.0023052357, 2.2727318, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 18.451494
+spot_angle = 24.069065
+
+[node name="FAB converted25" parent="GameWorld3/GameWorld3/Fase3/postes" parent_id_path=PackedInt32Array(380480754, 1462970087) index="6" unique_id=473663933 instance=ExtResource("15_opohq")]
+transform = Transform3D(0.045607075, 0, 0.99895936, 0, 1, 0, -0.99895936, 0, 0.045607075, 578.02747, 11.2917185, -3.8831654)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted25" unique_id=915194974]
+transform = Transform3D(0.97567075, -0.042221803, -0.21513684, 0.21447027, -0.019783111, 0.97653013, -0.045486946, -0.9989124, -0.010246479, 2.272726, 6.185005, -0.103759766)
+light_color = Color(1, 1, 0.45882353, 1)
+light_energy = 16.0
+light_indirect_energy = 1.099
+spot_range = 18.217072
+spot_angle = 20.474234
+
+[node name="FAB converted26" parent="GameWorld3/GameWorld3/Fase3/postes" parent_id_path=PackedInt32Array(380480754, 1462970087) index="7" unique_id=65659137 instance=ExtResource("15_opohq")]
+transform = Transform3D(0.045607075, 0, 0.99895936, 0, 1, 0, -0.99895936, 0, 0.045607075, 549.9356, 11.2917185, -4.05251)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted26" unique_id=1336770250]
+transform = Transform3D(0.9505512, -0.040328752, -0.30793902, 0.30738038, -0.019544376, 0.9513861, -0.044386677, -0.99899536, -0.006181659, 2.272728, 6.185005, -0.103759766)
+light_color = Color(1, 1, 0.45882353, 1)
+light_energy = 16.0
+spot_range = 18.200584
+spot_angle = 17.009811
+
+[node name="FAB converted27" parent="GameWorld3/GameWorld3/Fase3/postes" parent_id_path=PackedInt32Array(380480754, 1462970087) index="8" unique_id=326642657 instance=ExtResource("15_opohq")]
+transform = Transform3D(0.045607075, 0, 0.99895936, 0, 1, 0, -0.99895936, 0, 0.045607075, 523.9195, 11.2917185, -3.5829196)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted27" unique_id=236825712]
+transform = Transform3D(0.9569888, -0.04075311, -0.2872483, 0.2866656, -0.01961407, 0.95782995, -0.04466866, -0.99897677, -0.007087929, 2.2727242, 6.185005, -0.103759766)
+light_color = Color(1, 1, 0.45882353, 1)
+light_energy = 16.0
+spot_range = 20.059101
+spot_angle = 19.471249
+
+[node name="FAB converted28" parent="GameWorld3/GameWorld3/Fase3/postes" parent_id_path=PackedInt32Array(380480754, 1462970087) index="9" unique_id=1684363701 instance=ExtResource("15_opohq")]
+transform = Transform3D(0.045607075, 0, 0.99895936, 0, 1, 0, -0.99895936, 0, 0.045607075, 495.3488, 11.2917185, -3.7751331)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted28" unique_id=1578479347]
+transform = Transform3D(0.9172531, -0.038497727, -0.39644, 0.39598486, -0.019132946, 0.91805774, -0.042928193, -0.99907553, -0.0023052357, 2.2727318, 6.185005, -0.103759766)
+light_color = Color(1, 1, 0.45882353, 1)
+light_energy = 16.0
+spot_range = 18.451494
+spot_angle = 24.069065
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted5" parent_id_path=PackedInt32Array(380480754, 938309356) index="1" unique_id=232901324]
+transform = Transform3D(0.9438573, -0.04501439, -0.32727256, 0.3266395, -0.020973127, 0.9449164, -0.04939876, -0.9987662, -0.005092156, 2.2727356, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 18.495886
+spot_angle = 22.199081
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted6" parent_id_path=PackedInt32Array(380480754, 1086609227) index="1" unique_id=1057409126]
+transform = Transform3D(0.9332697, -0.03931659, -0.35701793, 0.35651648, -0.019339507, 0.9340887, -0.043629736, -0.99903953, -0.004031961, 2.2727203, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 18.252792
+spot_angle = 21.49112
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted8" parent_id_path=PackedInt32Array(380480754, 13270914) index="1" unique_id=2102770447]
+transform = Transform3D(0.95744735, -0.04078458, -0.28571147, 0.28512692, -0.019618865, 0.958289, -0.044688746, -0.99897534, -0.007155247, 2.272728, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 17.518282
+spot_angle = 22.93164
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted9" parent_id_path=PackedInt32Array(380480754, 1909391357) index="1" unique_id=572472919]
+transform = Transform3D(0.96674836, -0.041465957, -0.25234553, 0.2517222, -0.019709997, 0.96759886, -0.045096133, -0.99894553, -0.0086167045, 2.272728, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 19.029049
+spot_angle = 18.26259
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted10" parent_id_path=PackedInt32Array(380480754, 50175021) index="1" unique_id=2081990779]
+transform = Transform3D(0.94717234, -0.040117655, -0.31820592, 0.31765935, -0.019506173, 0.94800436, -0.044238694, -0.99900454, -0.0057319608, 2.2727318, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 19.717562
+spot_angle = 21.942738
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted11" parent_id_path=PackedInt32Array(380480754, 191825799) index="1" unique_id=675022541]
+transform = Transform3D(0.93534243, -0.039429978, -0.35153925, 0.35103154, -0.019365206, 0.93616337, -0.04372053, -0.9990347, -0.004271931, 2.272728, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 22.989227
+spot_angle = 21.433111
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted12" parent_id_path=PackedInt32Array(380480754, 2006936668) index="1" unique_id=1337599410]
+transform = Transform3D(0.9281349, -0.039043568, -0.37019077, 0.36970487, -0.019274758, 0.9289493, -0.043404832, -0.99905163, -0.0034549776, 2.2727242, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 17.949238
+spot_angle = 24.548893
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted13" parent_id_path=PackedInt32Array(380480754, 611199958) index="1" unique_id=1076767168]
+transform = Transform3D(0.97012365, -0.04173766, -0.23899347, 0.2383546, -0.01973965, 0.97097754, -0.04524398, -0.9989337, -0.00920154, 2.2727242, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 19.167751
+spot_angle = 24.02481
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted14" parent_id_path=PackedInt32Array(380480754, 1651857420) index="1" unique_id=116361082]
+transform = Transform3D(0.96331376, -0.041203935, -0.26519585, 0.26458746, -0.0196778, 0.9641609, -0.0449457, -0.998957, -0.008053849, 2.2727318, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 18.537518
+spot_angle = 21.560356
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted15" parent_id_path=PackedInt32Array(380480754, 60692591) index="1" unique_id=1916732400]
+transform = Transform3D(0.9450411, -0.03998815, -0.32449675, 0.3239575, -0.01948156, 0.945871, -0.044145335, -0.9990101, -0.005456417, 2.272728, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 19.65206
+spot_angle = 21.22052
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted16" parent_id_path=PackedInt32Array(380480754, 1391077840) index="1" unique_id=362957827]
+transform = Transform3D(0.8855256, -0.037100177, -0.46310645, 0.4627297, -0.018692328, 0.88630235, -0.04153851, -0.9991366, 0.0006148182, 2.2727318, 6.185005, -0.103759766)
+light_energy = 16.0
+spot_range = 19.91053
+spot_angle = 22.426617
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/postes/FAB converted7" parent_id_path=PackedInt32Array(380480754, 1166341283) index="1" unique_id=357434475]
+transform = Transform3D(0.95032024, -0.040314086, -0.3086522, 0.30809444, -0.0195418, 0.9511551, -0.044376574, -0.99899596, -0.00615042, 2.2727318, 6.185005, -0.1038208)
+light_energy = 16.0
+spot_range = 19.197008
+spot_angle = 21.335165
+
+[node name="pista8" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="7" unique_id=1133372162]
+transform = Transform3D(-0.19237103, 0, 0.048311915, 0, 1, 0, -0.0034116055, 0, -2.7241735, 617.7217, 3.0696278, 159.98344)
+
+[node name="pista9" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="8" unique_id=1287910850]
+transform = Transform3D(-0.19558868, 0, 0.048314475, 0, 1, 0, -0.0034686697, 0, -2.7243178, 617.3441, 3.0696278, 186.88689)
+
+[node name="pista10" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="9" unique_id=472543594]
+transform = Transform3D(-0.19719009, 0, 0.048315745, 0, 1, 0, -0.0034970702, 0, -2.7243893, 616.68024, 3.0696278, 214.20508)
+
+[node name="pista11" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="10" unique_id=1556166712]
+transform = Transform3D(-0.19600567, 0, 0.048314802, 0, 1, 0, -0.0034760656, 0, -2.7243364, 616.0387, 3.0696278, 240.2818)
+
+[node name="pista12" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="22" unique_id=311806549]
+transform = Transform3D(-0.004083424, 0, -2.7278118, 0, 1, 0, 0.19925795, 0, -0.05590144, 645.7944, 3.0696278, 189.01738)
+
+[node name="pista13" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="23" unique_id=2069003048]
+transform = Transform3D(-0.0012124479, 0, -2.7303388, 0, 1, 0, 0.19961576, 0, -0.016583748, 673.03076, 3.0696278, 189.35873)
+
+[node name="pista14" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="24" unique_id=1455526463]
+transform = Transform3D(-0.0012124483, 0, -2.7303383, 0, 1, 0, 0.19961578, 0, -0.016583782, 699.5305, 3.0696278, 189.49448)
+
+[node name="pista15" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="25" unique_id=2068076308]
+transform = Transform3D(-0.0012124493, 0, -2.7303388, 0, 1, 0, 0.1996158, 0, -0.016583748, 726.7947, 3.0696278, 189.5926)
+
+[node name="pista16" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="26" unique_id=344890492]
+transform = Transform3D(-0.0012522021, 0, -2.7326345, 0, 0.8736154, 0, 0.20616095, 0, -0.0165977, 753.645, 3.0696278, 190.99615)
+
+[node name="pista29" type="MeshInstance3D" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="27" unique_id=868465660]
+transform = Transform3D(-0.0040834234, 0, -2.7278118, 0, 1, 0, 0.19925794, 0, -0.055901445, 780.5118, 3.0696278, 191.82283)
+material_override = SubResource("StandardMaterial3D_4ni63")
+mesh = SubResource("BoxMesh_c7rvh")
+
+[node name="pista30" type="MeshInstance3D" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="28" unique_id=1389576240]
+transform = Transform3D(-0.0012124479, 0, -2.7303386, 0, 1, 0, 0.19961575, 0, -0.016583744, 807.7483, 3.0696278, 192.16418)
+material_override = SubResource("StandardMaterial3D_4ni63")
+mesh = SubResource("BoxMesh_c7rvh")
+
+[node name="pista31" type="MeshInstance3D" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="29" unique_id=1588613803]
+transform = Transform3D(-0.0012124483, 0, -2.730338, 0, 1, 0, 0.19961576, 0, -0.016583774, 834.2479, 3.0696278, 192.29993)
+material_override = SubResource("StandardMaterial3D_4ni63")
+mesh = SubResource("BoxMesh_c7rvh")
+
+[node name="pista32" type="MeshInstance3D" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="30" unique_id=615774756]
+transform = Transform3D(-0.0012124493, 0, -2.7303386, 0, 1, 0, 0.19961579, 0, -0.016583744, 861.51227, 3.0696278, 192.39806)
+material_override = SubResource("StandardMaterial3D_4ni63")
+mesh = SubResource("BoxMesh_c7rvh")
+
+[node name="pista33" type="MeshInstance3D" parent="GameWorld3/GameWorld3/Fase3/pistas" parent_id_path=PackedInt32Array(380480754, 323441092) index="31" unique_id=798504388]
+transform = Transform3D(-0.0012522023, 0, -2.7326343, 0, 0.8736154, 0, 0.20616095, 0, -0.016597692, 888.3625, 3.0696278, 193.80162)
+material_override = SubResource("StandardMaterial3D_4ni63")
+mesh = SubResource("BoxMesh_c7rvh")
+
+[node name="grama12" type="MeshInstance3D" parent="GameWorld3/GameWorld3/Fase3/gramas" parent_id_path=PackedInt32Array(380480754, 1657124159) index="9" unique_id=2085393385]
+transform = Transform3D(-1.8082124, 0, -85.220985, 0, 149.47702, 0, 59.833046, 0, -2.57546, 807.46387, 3.2043447, 195.3436)
+material_override = SubResource("StandardMaterial3D_cjl4j")
+mesh = SubResource("PlaneMesh_hy5fe")
+
+[node name="grama11" type="MeshInstance3D" parent="GameWorld3/GameWorld3/Fase3/gramas" parent_id_path=PackedInt32Array(380480754, 1657124159) index="11" unique_id=1543230935]
+transform = Transform3D(-1.8082124, 0, -85.22102, 0, 149.47702, 0, 59.833046, 0, -2.5754604, 810.8613, 3.2043447, 79.98585)
+material_override = SubResource("StandardMaterial3D_cjl4j")
+mesh = SubResource("PlaneMesh_hy5fe")
+
+[node name="ceu" parent="GameWorld3/GameWorld3/Fase3" index="6" unique_id=2065357447]
+transform = Transform3D(3.625102, 4.66918, -491.84448, 242.79747, -8.704228, 5.713873, -18.802832, -111.495964, -21.043316, 378.06067, 214.26135, 240.26639)
+material_override = SubResource("StandardMaterial3D_kjlcu")
+
+[node name="Sketchfab_Scene14" parent="GameWorld3/GameWorld3/Fase3/cidade" parent_id_path=PackedInt32Array(380480754, 921056217) index="4" unique_id=426937553 instance=ExtResource("18_lmghx")]
+transform = Transform3D(-2.4919345, 0, -1.4420267, 0, 3.0070581, 0, 1.1638621, 0, -3.0875125, 770.7296, 3.6748352, 243.67725)
+
+[node name="Sketchfab_Scene15" parent="GameWorld3/GameWorld3/Fase3/cidade" parent_id_path=PackedInt32Array(380480754, 921056217) index="5" unique_id=1827503060 instance=ExtResource("18_lmghx")]
+transform = Transform3D(-2.4258003, 0, -1.605837, 0, 3.0070589, 0, 1.2960728, 0, -3.0055718, 718.7123, 3.6748352, 241.49883)
+
+[node name="Sketchfab_Scene16" parent="GameWorld3/GameWorld3/Fase3/cidade" parent_id_path=PackedInt32Array(380480754, 921056217) index="6" unique_id=106343071 instance=ExtResource("18_lmghx")]
+transform = Transform3D(-2.5098305, 0, -1.39357, 0, 3.0070589, 0, 1.1247519, 0, -3.1096861, 661.9622, 3.6748352, 239.1223)
+
+[node name="Sketchfab_Scene17" parent="GameWorld3/GameWorld3/Fase3/cidade" parent_id_path=PackedInt32Array(380480754, 921056217) index="7" unique_id=611078246 instance=ExtResource("18_lmghx")]
+transform = Transform3D(-2.4919343, 0, -1.4420266, 0, 3.0070581, 0, 1.1638622, 0, -3.0875125, 929.0263, 3.6748352, 246.97374)
+
+[node name="Sketchfab_Scene18" parent="GameWorld3/GameWorld3/Fase3/cidade" parent_id_path=PackedInt32Array(380480754, 921056217) index="8" unique_id=679766671 instance=ExtResource("18_lmghx")]
+transform = Transform3D(-2.4258, 0, -1.605837, 0, 3.0070589, 0, 1.2960727, 0, -3.0055716, 877.009, 3.6748352, 244.7953)
+
+[node name="Sketchfab_Scene19" parent="GameWorld3/GameWorld3/Fase3/cidade" parent_id_path=PackedInt32Array(380480754, 921056217) index="9" unique_id=1263713178 instance=ExtResource("18_lmghx")]
+transform = Transform3D(-2.5098305, 0, -1.39357, 0, 3.0070589, 0, 1.1247519, 0, -3.1096864, 820.25885, 3.6748352, 242.4188)
+
+[node name="lua" parent="GameWorld3/GameWorld3/Fase3/luz" parent_id_path=PackedInt32Array(380480754, 499073361) index="0" unique_id=259662995]
+transform = Transform3D(0.78886354, 0.04585137, -0.6128556, 0.6136658, -0.0047420096, 0.7895517, 0.033295855, -0.998937, -0.031878218, -96.12134, 229.45929, 114.96223)
+light_energy = 66.0
+light_indirect_energy = 10.677
+light_volumetric_fog_energy = 11.347
+shadow_enabled = true
+spot_range = 933.274
+spot_attenuation = 1.14
+spot_angle = 52.0
+
+[node name="SpotLight3D" parent="GameWorld3/GameWorld3/Fase3/luz" parent_id_path=PackedInt32Array(380480754, 499073361) index="1" unique_id=348452477]
+light_energy = 16.0
+
+[node name="SpotLight3D2" parent="GameWorld3/GameWorld3/Fase3/luz" parent_id_path=PackedInt32Array(380480754, 499073361) index="2" unique_id=1221791172]
+light_energy = 16.0
+
+[node name="SpotLight3D3" parent="GameWorld3/GameWorld3/Fase3/luz" parent_id_path=PackedInt32Array(380480754, 499073361) index="3" unique_id=828240234]
+light_energy = 16.0
+
+[node name="SpotLight3D4" parent="GameWorld3/GameWorld3/Fase3/luz" parent_id_path=PackedInt32Array(380480754, 499073361) index="4" unique_id=1454052897]
+light_energy = 16.0
+
+[node name="SpotLight3D5" parent="GameWorld3/GameWorld3/Fase3/luz" parent_id_path=PackedInt32Array(380480754, 499073361) index="5" unique_id=1398449107]
+light_energy = 16.0
+
+[node name="SpotLight3D6" parent="GameWorld3/GameWorld3/Fase3/luz" parent_id_path=PackedInt32Array(380480754, 499073361) index="6" unique_id=1549654614]
+light_energy = 16.0
+
+[node name="ponto-onibus" parent="GameWorld3/GameWorld3" index="1" unique_id=1701881841]
+transform = Transform3D(-0.33949322, 0, -4.9562583, 0, 5, 0, 5.9897447, 0, -0.280916, 579.6193, 2.6137257, 9.067593)
+
+[node name="onibus" parent="GameWorld3/GameWorld3" unique_id=298152789 instance=ExtResource("15_2l7kv")]
+transform = Transform3D(-0.04092656, 0, -3.4997613, 0, 3.5, 0, 3.4997613, 0, -0.04092656, 602.88196, 3.6776848, -13.220333)
 
 [node name="PendriveUI" parent="." unique_id=327429250 instance=ExtResource("8_jgqi1")]
 
@@ -316,6 +682,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2141113, 9.536743e-07, 0.58
 [editable path="GameWorld2"]
 [editable path="GameWorld2/Corredorfase2"]
 [editable path="GameWorld2/Corredorfase2/Navigation/Corredorzin/Armarios/A16"]
+[editable path="GameWorld2/Corredorfase2/NoPenDrive/PenDrive2"]
+[editable path="GameWorld2/Corredorfase2/NoPenDrive/PenDrive3"]
+[editable path="GameWorld2/Corredorfase2/NoPenDrive/PenDrive4"]
+[editable path="GameWorld2/Corredorfase2/NoPenDrive/PenDrive5"]
+[editable path="GameWorld2/Corredorfase2/NoPenDrive/PenDrive6"]
 [editable path="GameWorld2/SalaFase2"]
-[editable path="GameWorld3"]
-[editable path="GameWorld3/Fase3_part2"]
+[editable path="GameWorld3/GameWorld3"]

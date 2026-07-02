@@ -1,11 +1,34 @@
 extends Area3D
 
+var player_in_area: bool = false
+
 func _ready():
 	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+func _process(delta):
+	if player_in_area and ("2-1" in name or "2_1" in name or "fase-2-1" in name):
+		if GameManager.pendrives_collected >= 6:
+			if Input.is_action_just_pressed("interact"):
+				print("acessando o computador")
+				# Aqui acionamos o evento de acessar o computador
+				GameManager.hide_interaction_message.emit()
+				GameManager.access_computer()
+				queue_free()
 
 func _on_body_entered(body: Node3D):
 	if body.name != "Player":
 		return
+		
+	# Se for o checkpoint 2-1, só funciona se a fase 1 já foi completada
+	if "2-1" in name or "2_1" in name or "fase-2-1" in name:
+		if not GameManager.checkpoint_3_reached:
+			return
+		
+	player_in_area = true
+	
+	if ("2-1" in name or "2_1" in name or "fase-2-1" in name) and GameManager.pendrives_collected >= 6:
+		GameManager.show_interaction_message.emit("Pressione [F] para acessar o computador")
 		
 	# Usa "in name" para funcionar mesmo se o nó se chamar "checkpoint-fase-1-1", "Checkpoint-1-1", etc.
 	if "1-1" in name or "1_1" in name:
@@ -34,3 +57,14 @@ func _on_body_entered(body: Node3D):
 			queue_free()
 		else:
 			print("Você precisa coletar o café e o bolo antes de terminar!")
+			
+	elif "2-1" in name or "2_1" in name or "fase-2-1" in name:
+		if not GameManager.checkpoint_fase_2_1_reached:
+			GameManager.checkpoint_fase_2_1_reached = true
+			print("Checkpoint 2-1 alcançado!")
+
+func _on_body_exited(body: Node3D):
+	if body.name == "Player":
+		player_in_area = false
+		if "2-1" in name or "2_1" in name or "fase-2-1" in name:
+			GameManager.hide_interaction_message.emit()

@@ -1,0 +1,1 @@
+bash: linha 1: godot: comando não encontrado

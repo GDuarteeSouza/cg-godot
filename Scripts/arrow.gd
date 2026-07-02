@@ -7,8 +7,8 @@ func _process(delta):
 		# Arrow 1 fica visível do começo até o player passar pelo checkpoint 2
 		visible = not GameManager.checkpoint_2_reached
 	else:
-		# Arrow 2 fica visível APENAS DEPOIS do checkpoint 2 e ATÉ completar o checkpoint 3
-		if GameManager.checkpoint_2_reached and not GameManager.checkpoint_3_reached:
+		# Arrow 2 fica visível assim que tiver 6 pendrives e ATÉ completar o checkpoint-fase-2-1
+		if GameManager.pendrives_collected >= 6 and not GameManager.checkpoint_fase_2_1_reached:
 			visible = true
 		else:
 			visible = false

@@ -7,10 +7,18 @@ const Rotation_speed := 45.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if not GameManager.checkpoint_3_reached:
+		hide()
+		process_mode = Node.PROCESS_MODE_DISABLED
+		GameManager.phase_1_completed.connect(_on_phase_1_completed)
+		
 	var penDrive_tween := create_tween().set_loops().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	penDrive_tween.tween_property(self,"position:y",end_pos, 1.0).from(start_pos)
 	penDrive_tween.tween_property(self,"position:y",start_pos, 1.0).from(end_pos)
 
+func _on_phase_1_completed():
+	show()
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
